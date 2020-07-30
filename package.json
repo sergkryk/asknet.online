@@ -1,0 +1,54 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "Если у вас возникла проблема со сборкой или есть желание что-то изменить или улучшить, пожалуйста, открывайте issue или pull request с вашими комментариями.",
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
+    "eslint": "eslint src/js/",
+    "test": "npm run editorconfig & npm run stylelint & npm run eslint",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js"
+  },
+  "browserslist": [
+    "last 2 versions",
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "author": "sergkryk",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^9.8.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.1.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.5.0",
+    "eslint-config-htmlacademy": "^0.5.2",
+    "file-loader": "^6.0.0",
+    "fs": "0.0.1-security",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "resolve-url-loader": "^3.1.1",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-htmlacademy": "^0.1.4",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
