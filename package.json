@@ -1,7 +1,10 @@
 {
   "name": "template",
   "version": "1.0.0",
-  "description": "Если у вас возникла проблема со сборкой или есть желание что-то изменить или улучшить, пожалуйста, открывайте issue или pull request с вашими комментариями.",
+  "author": "sergkryk",
+  "license": "MIT",
+  "description": "Очередная попытка создание бандла мечты",
+
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
@@ -16,8 +19,14 @@
     "not ie 11",
     "not op_mini all"
   ],
-  "author": "sergkryk",
-  "license": "MIT",
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
+  ],
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
@@ -25,7 +34,6 @@
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^4.1.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",

@@ -37,19 +37,61 @@ module.exports = {
   module: {
     rules: [
       { // изображения из стилей
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
           outputPath: 'img',
           name: '[name].[ext]',
         },
       },
+      { // изображения из стилей
+        test: /\.(svg)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'img/svg',
+          name: '[name].[ext]',
+        },
+      },
       { // изображения и файлы из html
         test: /\.html$/i,
-        use: ['html-loader'],
+        loader: 'html-loader',
+        options: {
+          attributes: {
+            list: [
+              {
+                // Tag name
+                tag: 'use',
+                // Attribute name
+                attribute: 'xlink:href',
+                // Type of processing, can be `src` or `scrset`
+                type: 'src',
+              },
+              {
+                tag: 'img',
+                attribute: 'src',
+                type: 'src',
+              },
+              {
+                tag: 'img',
+                attribute: 'srcset',
+                type: 'srcset',
+              },
+              {
+                tag: 'img',
+                attribute: 'data-src',
+                type: 'src',
+              },
+              {
+                tag: 'img',
+                attribute: 'data-srcset',
+                type: 'srcset',
+              }
+            ],
+          },
+        },
       },
       { // шрифты
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
