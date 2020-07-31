@@ -1,0 +1,23 @@
+mixin header
+    header.header
+      div.header__logo
+        img(src=require("../../img/svg/logo.svg").default width="150")
+      button.header__button.hamburger.hamburger--spin(type="button" aria-label="Открыть меню" aria-controls="Навигация по сайту")
+        span.hamburger__box
+          span.hamburger__inner
+      nav.header__nav
+        ul.header__list
+          li.header__item
+            a.header__link.header__link--hover(href="main.html") Главная
+          li.header__item
+            a.header__link.header__link--hover(href="news.html") Новости
+          li.header__item
+            a.header__link.header__link--hover(href="finance.html") Тарифы
+          li.header__item
+            a.header__link.header__link--hover(href="faq.html") Помощь
+          li.header__item
+            a.header__link.header__link--hover(href="about.html") О нас
+          li.header__item.header__item--login
+            a.header__link.header__link--login(href="https://10.100.0.254:9443" target="blank") Личный кабинет
+
+

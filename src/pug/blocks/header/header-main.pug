@@ -1,0 +1,7 @@
+include ../site-nav/site-nav-main
+
+mixin header-main(color, number, mainLink)
+  div(class='header ' + (attributes.class ? ' ' + attributes.class : ''))
+    +site-nav-main(color, number, [{name: 'Институт', link: '#'}, {name: 'Проекты', link: '#'}, {name: 'Данные', link: '#'}, {name: 'Экспедиции', link: '#'}, {name: 'Флот', link: '#'}, {name: 'Учёный совет', link: '#'}, {name: 'Подготовка кадров', link: '#'}, {name: 'Вакансии', link: '#'}, {name: 'Пресс-центр', link: '#'}, {name: 'Контакты', link: 'contacts.html'}], mainLink).header__nav
+  a(href="http://www.meteorf.ru").header-logo-hydromed
+    +svg('icon-hydro-logo')(width="32" height="32")

@@ -4,14 +4,13 @@
   "author": "sergkryk",
   "license": "MIT",
   "description": "Очередная попытка создание бандла мечты",
-
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
     "eslint": "eslint src/js/",
     "test": "npm run editorconfig & npm run stylelint & npm run eslint",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js"
+    "start": "webpack-dev-server --open --host 0.0.0.0 --config webpack.dev.js"
   },
   "browserslist": [
     "last 2 versions",
@@ -47,6 +46,8 @@
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
     "resolve-url-loader": "^3.1.1",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",

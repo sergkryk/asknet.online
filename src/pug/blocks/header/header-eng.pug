@@ -1,0 +1,7 @@
+include ../site-nav/site-nav-eng
+
+mixin header-eng(color)
+  div(class='header header--eng ' + (attributes.class ? ' ' + attributes.class : ''))
+    +site-nav-eng(color).header__nav
+  a(href="http://www.meteorf.ru").header-logo-hydromed
+    +svg('icon-hydro-logo')(width="32" height="32")

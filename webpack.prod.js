@@ -9,11 +9,13 @@ const PATHS = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'dist'),
   html: path.resolve(__dirname, 'src/html/pages'),
+  pug: path.resolve(__dirname, 'src/pug/pages'),
 };
 
 // Pages const for HtmlWebpackPlugin
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-const PAGES = fs.readdirSync(PATHS.html).filter((fileName) => fileName.endsWith('.html'));
+// const PAGES = fs.readdirSync(PATHS.html).filter((fileName) => fileName.endsWith('.html'));
+const PUG_PAGES = fs.readdirSync(PATHS.pug).filter((fileName) => fileName.endsWith('.pug'));
 
 module.exports = {
   mode: 'production', // режим сборки
@@ -36,6 +38,10 @@ module.exports = {
 
   module: {
     rules: [
+      { // шаблонизатор pug
+        test: /\.pug$/,
+        loader: 'pug-loader',
+      },
       { // изображения из стилей
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
@@ -95,7 +101,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'fonts',
+          outputPath: '../fonts',
         },
       },
       { // javascript
@@ -149,9 +155,14 @@ module.exports = {
       filename: 'css/style.min.css',
     }),
     // собирает все html-файлы из директории src/html/pages
-    ...PAGES.map((page) => new HtmlWebpackPlugin({
-      template: `${PATHS.html}/${page}`,
-      filename: `./${page}`,
+    // ...PAGES.map((page) => new HtmlWebpackPlugin({
+    //   template: `${PATHS.html}/${page}`,
+    //   filename: `./${page}`,
+    // })
+    // ),
+    ...PUG_PAGES.map((page) => new HtmlWebpackPlugin({
+      template: `${PATHS.pug}/${page}`,
+      filename: `./${page.replace(/\.pug/, '.html')}`,
     })
     )
   ],

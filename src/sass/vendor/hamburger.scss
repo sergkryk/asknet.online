@@ -1,0 +1,105 @@
+.hamburger {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger__inner,
+.hamburger.is-active .hamburger__inner::before,
+.hamburger.is-active .hamburger__inner::after {
+  background-color: #000000;
+}
+
+.hamburger__box {
+  position: relative;
+
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+}
+
+.hamburger__inner {
+  top: 50%;
+
+  display: block;
+  margin-top: -2px;
+}
+.hamburger__inner,
+.hamburger__inner::before,
+.hamburger__inner::after {
+  position: absolute;
+
+  width: 28px;
+  height: 2px;
+
+  background-color: #000000;
+  border-radius: 4px;
+
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+}
+.hamburger__inner::before,
+.hamburger__inner::after {
+  content: "";
+
+  display: block;
+}
+.hamburger__inner::before {
+  top: -8px;
+}
+.hamburger__inner::after {
+  bottom: -8px;
+}
+
+// spin effect
+
+.hamburger--spin .hamburger__inner {
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-duration: 0.22s;
+}
+.hamburger--spin .hamburger__inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+.hamburger--spin .hamburger__inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger__inner {
+  transform: rotate(225deg);
+
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger__inner::before {
+  top: 0;
+
+  opacity: 0;
+
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+.hamburger--spin.is-active .hamburger__inner::after {
+  bottom: 0;
+
+  transform: rotate(-90deg);
+
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}

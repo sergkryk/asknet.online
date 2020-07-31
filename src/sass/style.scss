@@ -1,7 +1,7 @@
 // Vendor
 //---------------------------------
 @import "normalize.css"; // импортирую из node_modules
-// @import "vendor/swiper";
+@import "vendor/hamburger";
 
 // Global
 //---------------------------------
@@ -10,9 +10,10 @@
 @import "global/fonts";
 @import "global/typography";
 @import "global/utils";
+@import "global/reset";
 @import "global/container";
 
 // Blocks
 //---------------------------------
-@import "blocks/header";
+@import "../pug/blocks/header/header.scss";
 @import "blocks/footer";

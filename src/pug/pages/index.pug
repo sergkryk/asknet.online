@@ -1,0 +1,18 @@
+include ../blocks/head/head
+include ../blocks/header/header
+
+doctype html
+html(lang="ru")
+  +head('ASKnet | Список страниц')
+    meta(name="description" content="Список страниц данного сайта")
+  body
+    +header
+    main
+      div.container
+        ul
+          li
+            a(href="index.html") Список страниц
+          li
+            a(href="main.html") Главная
+      div.overlay
+
