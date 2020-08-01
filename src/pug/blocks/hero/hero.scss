@@ -1,0 +1,156 @@
+.hero {
+  position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  min-height: calc(var(--vh, 1vh) * 100);
+  padding-top: 80px;
+}
+
+.hero__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  overflow: hidden;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba($color: $color-dark-blue, $alpha: 0.8);
+  }
+}
+
+.hero__image img {
+  display: block;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+
+  object-fit: cover;
+}
+
+.hero__content {
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero__title {
+  margin: 0 0 1rem 0;
+  padding: 0;
+
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: center;
+  color: $color-default-white;
+}
+
+.hero__subtitle {
+  margin: 0 0 1rem 0;
+  padding: 0;
+
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  text-align: center;
+  color: $color-default-white;
+}
+
+.hero__text {
+  margin: 0 0 1rem 0;
+  padding: 0;
+
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  text-align: center;
+  color: $color-default-white;
+}
+
+.hero__button {
+  margin: 0 auto 20px;
+}
+
+@media (min-width: $viewport--sm) {
+  .hero__title {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: $viewport--md) {
+  .hero__content {
+    padding: 40px;
+  }
+
+  .hero__button-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .hero__text {
+    margin-bottom: 50px;
+
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .hero__button {
+    margin: 0;
+  }
+
+  .hero__button + .hero__button {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: $viewport--xl) {
+  .hero__title {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .hero__text {
+    margin-bottom: 50px;
+
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}

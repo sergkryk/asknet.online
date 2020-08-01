@@ -1,5 +1,6 @@
 include ../blocks/head/head
 include ../blocks/header/header
+include ../blocks/hero/hero
 
 doctype html
 html(lang="ru")
@@ -8,8 +9,5 @@ html(lang="ru")
   body
     +header
     main
-      div.container
-        ul
-          li
-            a(href="main.html") Главная
+      +hero
 

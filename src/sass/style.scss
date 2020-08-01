@@ -13,7 +13,13 @@
 @import "global/reset";
 @import "global/container";
 
+// Components
+//---------------------------------
+@import "../pug/components/button/button.scss";
+
+
 // Blocks
 //---------------------------------
 @import "../pug/blocks/header/header.scss";
+@import "../pug/blocks/hero/hero.scss";
 @import "blocks/footer";

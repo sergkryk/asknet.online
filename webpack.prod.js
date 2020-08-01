@@ -43,7 +43,7 @@ module.exports = {
         loader: 'pug-loader',
       },
       { // изображения из стилей
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|webp)$/,
         loader: 'file-loader',
         options: {
           outputPath: 'img',
