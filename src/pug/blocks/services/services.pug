@@ -1,0 +1,41 @@
+include ../svg/svg.pug
+
+mixin services
+    section.services
+      div.container
+        h2.services__title Мы предлагаем широкий спектр коммуникационных услуг
+        ul.services__list
+           li.services__card
+            div.services__image
+              +svg('icon-internet')(width="50" height="50" aria-label="Иконка")
+            h2.services__card-title Доступ в Интернет
+            p.services__text Мы предоставляем скоростной, безлимитный доступ к глобальной сети Интернет используя высококачественное активное оборудование и надёжные волоконно-оптические линии связи.
+            a.services__link(href="#" aria-label!=attributes.aria)
+              span узнать больше
+              +svg('icon-arrow')(width="31" height="20" aria-label="Иконка")
+           li.services__card
+            div.services__image
+              +svg('icon-iptv')(width="50" height="50" aria-label="Иконка")
+            h2.services__card-title Просмотр цифрового телевидения
+            p.services__text Нашим абонентам доступны к просмотру более 200 телевизионных каналов, многие из которых вещаются в full-hd разрешении.
+            a.services__link(href="#" aria-label!=attributes.aria)
+              span узнать больше
+              +svg('icon-arrow')(width="31" height="20" aria-label="Иконка")
+           li.services__card
+            div.services__image
+              +svg('icon-support')(width="50" height="50" aria-label="Иконка")
+            h2.services__card-title Техническая поддержка
+            p.services__text Если возникла проблема вы всегда можете обратиться в нашу службу технической поддержки которая работает ежедневно.
+            a.services__link(href="#" aria-label!=attributes.aria)
+              span узнать больше
+              +svg('icon-arrow')(width="31" height="20" aria-label="Иконка")
+           li.services__card
+            div.services__image
+              +svg('icon-chart')(width="50" height="50" aria-label="Иконка")
+            h2.services__card-title Подробная статистика абонента
+            p.services__text У каждого абонента есть личный кабинет в котором хранится подробная статистика активности в нашей сети и финансовых операций.
+            a.services__link(href="#" aria-label!=attributes.aria)
+              span узнать больше
+              +svg('icon-arrow')(width="31" height="20" aria-label="Иконка")
+
+

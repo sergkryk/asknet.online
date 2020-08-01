@@ -4,6 +4,8 @@ const fs = require('fs');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const SpritePlugin = require('svg-sprite-loader/plugin');
 
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
@@ -52,10 +54,20 @@ module.exports = {
       },
       { // изображения из стилей
         test: /\.(svg)$/,
+        exclude: `${PATHS.src}/img/sprite`,
         loader: 'file-loader',
         options: {
           outputPath: 'img/svg',
           name: '[name].[ext]',
+        },
+      },
+      {
+        test: /icon\-\w+\.(svg)$/,
+        exclude: `${PATHS.src}/img/svg`,
+        loader: 'svg-sprite-loader',
+        options: {
+          extract: true,
+          publicPath: 'img/',
         },
       },
       { // изображения и файлы из html
@@ -101,7 +113,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: '../fonts',
+          outputPath: 'fonts', // чтобы шрифты копировало в корень dist в папку fonts
+          publicPath: '../fonts', // чтобы прописывало правильный путь к файлам шрифтов
         },
       },
       { // javascript
@@ -150,6 +163,7 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: false,
     }),
+    new SpritePlugin(),
     // css отдельным файлом
     new MiniCssExtractPlugin({
       filename: 'css/style.min.css',
@@ -160,7 +174,19 @@ module.exports = {
     //   filename: `./${page}`,
     // })
     // ),
-    ...PUG_PAGES.map((page) => new HtmlWebpackPlugin({
+    new CopyPlugin({ // копирует статические файлы включая свг-спрайт
+      patterns: [
+        // {
+        //   from: `${PATHS.src}/img/sprite`,
+        //   to: `${PATHS.dist}/img/sprite`,
+        // },
+        {
+          from: `${PATHS.src}/static`,
+          to: `${PATHS.dist}`,
+        }
+      ],
+    }),
+    ...PUG_PAGES.map((page) => new HtmlWebpackPlugin({ // собирает все pug-файлы из директории src/pug/pages
       template: `${PATHS.pug}/${page}`,
       filename: `./${page.replace(/\.pug/, '.html')}`,
     })

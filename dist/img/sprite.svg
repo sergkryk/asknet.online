@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style>
+    .sprite-symbol-usage {display: none;}
+    .sprite-symbol-usage:target {display: inline;}
+  </style><symbol fill="#ffffff" stroke="#ffffff" viewBox="0 0 50 50" id="icon-chart">
+  <path fill="none" stroke="none" d="M0 0h50v50H0z" />
+  <circle cx="2" cy="25" r="2" />
+  <circle cx="15" cy="19" r="2" />
+  <circle cx="25" cy="11" r="2" />
+  <circle cx="35" cy="17" r="2" />
+  <circle cx="48" cy="5" r="2" />
+  <circle cx="2" cy="39" r="2" />
+  <circle cx="15" cy="41" r="2" />
+  <circle cx="25" cy="33" r="2" />
+  <circle cx="35" cy="43" r="2" />
+  <circle cx="48" cy="31" r="2" />
+  <path fill="none" stroke="inherit" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M2 25l13-6 10-8 10 6L48 5M2 39l13 2 10-8 10 10 13-12" /></symbol><symbol stroke="#ffffff" viewBox="0 0 50 50" id="icon-internet">
+  <path fill="none" stroke="none" d="M0 0h50v50H0z" />
+  <circle cx="25" cy="25" fill="none" r="24" stroke="inherit" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+  <ellipse cx="25" cy="25" fill="none" rx="12" ry="24" stroke="inherit" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+  <path d="M6.365 40.438C10.766 37.729 17.479 36 25 36c7.418 0 14.049 1.682 18.451 4.325M43.635 9.563C39.234 12.271 32.521 14 25 14c-7.417 0-14.049-1.682-18.451-4.325M1 25h48M25 1v48" fill="none" stroke="inherit" stroke-miterlimit="10" stroke-width="2" /></symbol><symbol viewBox="0 0 22 20" id="icon-iptv">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M-1-2h24v24H-1z" />
+    <path d="M9.5 15.15l3.98-2.28c.67-.38.67-1.35 0-1.74L9.5 8.85c-.67-.38-1.5.11-1.5.87v4.55c0 .77.83 1.26 1.5.88zM20 4h-7.59l2.94-2.94c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0L11 3.99 7.36.35c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71L9.59 4H2a2 2 0 00-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6a2 2 0 00-2-2zm-1 14H3c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1z" fill="#ffffff" />
+  </g>
+</symbol><symbol viewBox="0 0 32 32" fill="#ffffff" id="icon-support">
+  <path d="M16 2C9.4 2 4 7.3 4 13.9V18c0 2.8 2.2 5 5 5 .6 0 1-.4 1-1v-8c0-.6-.4-1-1-1-1.1 0-2.2.4-3 1v-.2C6 8.4 10.5 4 16 4s10 4.4 10 9.9v.1c-.8-.6-1.9-1-3-1-.6 0-1 .4-1 1v8c0 .6.4 1 1 1 .7 0 1.4-.2 2-.4-1 2.1-2.8 3.7-5 4.6V27c0-.6-.4-1-1-1h-3c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 6.6 0 12-5.2 12-11.6v-4.5C28 7.3 22.6 2 16 2z" />
+  </symbol></defs><use id="icon-chart-usage" xlink:href="#icon-chart" class="sprite-symbol-usage" /><use id="icon-internet-usage" xlink:href="#icon-internet" class="sprite-symbol-usage" /><use id="icon-iptv-usage" xlink:href="#icon-iptv" class="sprite-symbol-usage" /><use id="icon-support-usage" xlink:href="#icon-support" class="sprite-symbol-usage" /></svg>

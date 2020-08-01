@@ -2,7 +2,9 @@ import {debounce} from '../utils/debounce';
 
 const setVhVariable = () => {
   let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  if (window.scrollY === 0) { // добавлена проверка т.к. приводило к скачку контента при скролле на ios
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
 };
 
 const setVhDebounced = debounce(function () {

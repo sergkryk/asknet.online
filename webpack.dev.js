@@ -4,6 +4,8 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
+const SpritePlugin = require('svg-sprite-loader/plugin');
 
 const PATHS = { // переменные для папок разработки и продакшена
   src: path.resolve(__dirname, 'src'),
@@ -64,10 +66,20 @@ module.exports = {
       },
       { // изображения из стилей
         test: /\.(svg)$/,
+        exclude: `${PATHS.src}/img/sprite`,
         loader: 'file-loader',
         options: {
           outputPath: 'img/svg',
           name: '[name].[ext]',
+        },
+      },
+      {
+        test: /icon\-\w+\.(svg)$/,
+        exclude: `${PATHS.src}/img/svg`,
+        loader: 'svg-sprite-loader',
+        options: {
+          extract: true,
+          publicPath: 'img/',
         },
       },
       { // изображения и файлы из html
@@ -113,7 +125,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: '../fonts',
+          outputPath: 'fonts',
+          publicPath: '../fonts',
         },
       },
       { // javascript
@@ -161,6 +174,7 @@ module.exports = {
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
     }),
+    new SpritePlugin(), // для свг спрайта
     // css отдельным файлом
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
@@ -171,6 +185,18 @@ module.exports = {
     //   filename: `./${page}`,
     // })
     // ),
+    new CopyPlugin({ // копирует статические файлы включая свг-спрайт
+      patterns: [
+        {
+          from: `${PATHS.src}/img/sprite`,
+          to: `${PATHS.dist}/img/sprite`,
+        },
+        {
+          from: `${PATHS.src}/static`,
+          to: `${PATHS.dist}`,
+        }
+      ],
+    }),
     ...PUG_PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PATHS.pug}/${page}`,
       filename: `./${page.replace(/\.pug/, '.html')}`,

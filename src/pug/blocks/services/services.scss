@@ -1,0 +1,119 @@
+.services {
+  padding: 50px 0;
+
+  background-color: $color-bg-grey;
+}
+
+.services__title {
+  margin: 0 0 25px;
+  padding: 0;
+
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  text-align: center;
+  color: $color-light-black;
+}
+
+.services__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.services__card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  padding: 20px;
+
+  background-color: $color-default-white;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 0 rgba($color-light-black, 0.2);
+}
+
+.services__card + .services__card {
+  margin-top: 25px;
+}
+
+.services__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 15px;
+
+  background-color: $color-green;
+  border-radius: 50%;
+}
+
+.services__image svg {
+  fill: $color-default-white;
+  stroke: $color-default-white;
+}
+
+.services__card-title {
+  margin: 0 0 15px;
+  padding: 0;
+
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $color-light-black;
+}
+
+.services__text {
+  margin: 0 0 15px;
+  padding: 0;
+
+  color: $color-dark-blue;
+}
+
+.services__link {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: auto;
+  padding: 5px 5px 5px 0;
+
+  color: $color-yellow;
+}
+
+.services__link svg {
+  margin-left: 10px;
+
+  transition: transform $default-transition;
+
+  fill: $color-yellow;
+}
+
+.services__link:hover svg {
+  transform: translateX(8px);
+}
+
+@media (min-width: $viewport--md) {
+  .services__title {
+    margin: 0 0 45px;
+
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .services__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .services__card {
+    max-width: calc((100% - 30px) / 2);
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  .services__card + .services__card {
+    margin-top: unset;
+  }
+}

@@ -18,6 +18,7 @@ $color-dark-blue: #124772;
 $color-green: #4caf50;
 $color-yellow: #ffc107;
 $color-grey: #f8f8f8;
+$color-bg-grey: #fbfbfb;
 
 // Gradient
 
@@ -32,7 +33,7 @@ $font-family--roboto: "Roboto", "Arial", sans-serif;
 //---------------------------------
 
 $default-transition: 0.3s ease-in-out;
-$modal-transition-settings: 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$modal-transition: 0.6s cubic-bezier(0.55, 0, 0.1, 1);
 
 // Viewports
 //---------------------------------
