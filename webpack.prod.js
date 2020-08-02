@@ -166,7 +166,7 @@ module.exports = {
     new SpritePlugin(),
     // css отдельным файлом
     new MiniCssExtractPlugin({
-      filename: 'css/style.min.css',
+      filename: 'css/style.[contenthash].min.css',
     }),
     // собирает все html-файлы из директории src/html/pages
     // ...PAGES.map((page) => new HtmlWebpackPlugin({
