@@ -147,7 +147,7 @@
   }
 
   .pricing__card {
-    width: calc((100% - 30px) / 2);
+    width: calc((100% - 50px) / 2);
     margin: 0;
     margin-bottom: 30px;
   }
@@ -155,6 +155,18 @@
 
 @media (min-width: $viewport--lg) {
   .pricing__card {
-    width: calc((100% - 90px) / 3);
+    width: calc((100% - 80px) / 3);
+  }
+}
+
+@media (min-width: $viewport--xl) {
+  .pricing__card {
+    width: calc((100% - 180px) / 3);
+  }
+}
+
+@media (min-width: $viewport--xxl) {
+  .pricing__card {
+    width: calc((100% - 270px) / 3);
   }
 }

@@ -108,9 +108,9 @@
   }
 
   .services__card {
-    max-width: calc((100% - 30px) / 2);
+    max-width: calc((100% - 50px) / 2);
     margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .services__card + .services__card {
@@ -120,6 +120,12 @@
 
 @media (min-width: $viewport--xl) {
   .services__card {
-    max-width: calc((100% - 30px) / 4);
+    max-width: calc((100% - 120px) / 4);
+  }
+}
+
+@media (min-width: $viewport--xxl) {
+  .services__card {
+    max-width: calc((100% - 240px) / 4);
   }
 }
