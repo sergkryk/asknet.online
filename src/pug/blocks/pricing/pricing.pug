@@ -1,0 +1,74 @@
+include ../svg/svg.pug
+
+mixin pricing
+    section.pricing
+      div.container
+        h2.pricing__title Тарифные планы
+        ul.pricing__list
+           li.pricing__card
+            h2.pricing__card-title Эконом
+            div.pricing__price
+              span &#8381;
+              span 200
+            p.pricing__description Подходит для тех, кто используют Интернет только для звонков через Viber и подобные приложения.
+            ul.pricing__details
+              li.pricing__details-item
+                +svg('icon-www')(width="20" height="20" aria-label="Иконка")
+                span безлимитный Интернет на скорости до 5 мбит/с
+              li.pricing__details-item
+                +svg('icon-support')(width="20" height="20" aria-label="Иконка")
+                span ежедневная техническая поддержка
+              li.pricing__details-item.pricing__details-item--disabled
+                +svg('icon-tv')(width="20" height="20" aria-label="Иконка")
+                span просмотр более 200 IPTV каналов
+              li.pricing__details-item.pricing__details-item--disabled
+                +svg('icon-youtube')(width="20" height="20" aria-label="Иконка")
+                span возможность просматривать видео высокого качества
+              li.pricing__details-item.pricing__details-item--disabled
+                +svg('icon-rocket')(width="20" height="20" aria-label="Иконка")
+                span быстрое скачивание файлов из Интернета
+           li.pricing__card.pricing__card--yellow
+            h2.pricing__card-title Простой
+            div.pricing__price
+              span &#8381;
+              span 300
+            p.pricing__description Скоростной тариф для комфортного пользования Интернетом.
+            ul.pricing__details
+              li.pricing__details-item
+                +svg('icon-www')(width="20" height="20" aria-label="Иконка")
+                span безлимитный Интернет на скорости до 30 мбит/с
+              li.pricing__details-item
+                +svg('icon-support')(width="20" height="20" aria-label="Иконка")
+                span ежедневная техническая поддержка
+              li.pricing__details-item
+                +svg('icon-youtube')(width="20" height="20" aria-label="Иконка")
+                span возможность просматривать видео высокого качества
+              li.pricing__details-item.pricing__details-item--disabled
+                +svg('icon-tv')(width="20" height="20" aria-label="Иконка")
+                span просмотр более 200 IPTV каналов
+              li.pricing__details-item.pricing__details-item--disabled
+                +svg('icon-rocket')(width="20" height="20" aria-label="Иконка")
+                span быстрое скачивание файлов из Интернета
+           li.pricing__card.pricing__card--green
+            h2.pricing__card-title Простой + TV
+            div.pricing__price
+              span &#8381;
+              span 300
+            p.pricing__description Скорость доступа до 100 мбит/с + 200 телевизионных каналов.
+            ul.pricing__details
+              li.pricing__details-item
+                +svg('icon-www')(width="20" height="20" aria-label="Иконка")
+                span безлимитный Интернет на скорости до 100 мбит/с
+              li.pricing__details-item
+                +svg('icon-support')(width="20" height="20" aria-label="Иконка")
+                span ежедневная техническая поддержка
+              li.pricing__details-item
+                +svg('icon-youtube')(width="20" height="20" aria-label="Иконка")
+                span возможность просматривать видео высокого качества
+              li.pricing__details-item
+                +svg('icon-tv')(width="20" height="20" aria-label="Иконка")
+                span просмотр более 200 IPTV каналов
+              li.pricing__details-item
+                +svg('icon-rocket')(width="20" height="20" aria-label="Иконка")
+                span быстрое скачивание файлов из Интернета
+

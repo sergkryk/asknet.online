@@ -136,6 +136,25 @@
   }
 }
 
+@media (min-width: $viewport--lg) {
+  .hero__title {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .hero__text {
+    margin-bottom: 50px;
+
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
 @media (min-width: $viewport--xl) {
   .hero__title {
     font-size: 5rem;
