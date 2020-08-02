@@ -1,6 +1,7 @@
 // import {polyfills} from './utils/polyfills';
 import {initMenu} from '../pug/blocks/header/header';
 import {onResizeSetVh, setVhVariable} from '../js/utils/viewport-height';
+import {initScrollToAnchor} from '../js/utils/smooth-scroll';
 // import {ieFooterNailing} from './utils/ie-footer-nailing';
 
 // import {initModals} from './modules/init-modals';
@@ -18,3 +19,4 @@ import {onResizeSetVh, setVhVariable} from '../js/utils/viewport-height';
 initMenu();
 setVhVariable(); // устанавливает переменную в root для определения правильной высоты вьюпорта
 onResizeSetVh(); // добавляет обработчик события resize и пересчитывает переменную
+initScrollToAnchor();
