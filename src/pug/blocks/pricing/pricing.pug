@@ -3,10 +3,10 @@ include ../svg/svg.pug
 mixin pricing
     section.pricing#pricing
       div.container
-        h2.pricing__title Тарифные планы
+        h2.pricing__title.site-title Тарифные планы
         ul.pricing__list
            li.pricing__card
-            h2.pricing__card-title Эконом
+            h3.pricing__card-title Эконом
             div.pricing__price
               span &#8381;
               span 200
@@ -28,7 +28,7 @@ mixin pricing
                 +svg('icon-rocket')(width="20" height="20" aria-label="Иконка")
                 span быстрое скачивание файлов из Интернета
            li.pricing__card.pricing__card--yellow
-            h2.pricing__card-title Простой
+            h3.pricing__card-title Простой
             div.pricing__price
               span &#8381;
               span 300
@@ -50,7 +50,7 @@ mixin pricing
                 +svg('icon-rocket')(width="20" height="20" aria-label="Иконка")
                 span быстрое скачивание файлов из Интернета
            li.pricing__card.pricing__card--green
-            h2.pricing__card-title Простой + TV
+            h3.pricing__card-title Простой + TV
             div.pricing__price
               span &#8381;
               span 300

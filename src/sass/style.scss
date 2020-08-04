@@ -2,6 +2,7 @@
 //---------------------------------
 @import "normalize.css"; // импортирую из node_modules
 @import "vendor/hamburger";
+@import "../../node_modules/swiper/swiper.scss";
 
 // Global
 //---------------------------------
@@ -16,6 +17,7 @@
 // Components
 //---------------------------------
 @import "../pug/components/button/button.scss";
+@import "../pug/components/site-title/site-title.scss";
 
 
 // Blocks
@@ -24,3 +26,5 @@
 @import "../pug/blocks/hero/hero.scss";
 @import "../pug/blocks/services/services.scss";
 @import "../pug/blocks/pricing/pricing.scss";
+@import "../pug/blocks/news/news.scss";
+@import "../pug/blocks/faq/faq.scss";

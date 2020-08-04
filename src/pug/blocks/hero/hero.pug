@@ -7,11 +7,12 @@ mixin hero
             source(type="image/webp", srcset=`${require("../../img/hero/hero-bg-1920@1x.webp").default} 1x, ${require("../../img/hero/hero-bg-1920@2x.webp").default} 2x`)
             source(media="(max-width: 1024px)" srcset=`${require("../../img/hero/hero-bg-1024@1x.jpg").default} 1x, ${require("../../img/hero/hero-bg-1024@2x.jpg").default} 2x`)
             img(src=require("../../img/hero/hero-bg-1920@1x.jpg").default, srcset=`${require("../../img/hero/hero-bg-1920@2x.jpg").default} 2x`, alt="Фон")
-        div.hero__content
-          h1.hero__title Интернет-провайдер ASKnet
-          h2.hero__subtitle Скоростной доступ к сети Интернет и более 200 телевизионных каналов в одном кабеле.
-          p.hero__text Наша компания занимается предоставлением услуг доступа в сеть Интернет и просмотра цифрового телевидения используя передовые технологии GEPON и FTTH (волоконно-оптическая линия к каждому абоненту).
-          div.hero__button-wrapper
-            +button('узнать больше')(class="hero__button button", aria="Перейти на страницу с детальным описанием", href="about.html")
-            +button('позвонить нам')(class="hero__button button button--yellow", aria="Позвонить в нашу компанию", href="tel:+30991170048")
+        div.container
+          div.hero__content
+            h1.hero__title Интернет-провайдер ASKnet
+            h2.hero__subtitle Скоростной доступ к сети Интернет и более 200 телевизионных каналов в одном кабеле.
+            p.hero__text Наша компания занимается предоставлением услуг доступа в сеть Интернет и просмотра цифрового телевидения используя передовые технологии GEPON и FTTH (волоконно-оптическая линия к каждому абоненту).
+            div.hero__button-wrapper
+              +button('узнать больше')(class="hero__button button", aria="Перейти на страницу с детальным описанием", href="about.html")
+              +button('позвонить нам')(class="hero__button button button--yellow", aria="Позвонить в нашу компанию", href="tel:+30991170048")
 

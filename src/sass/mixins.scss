@@ -31,26 +31,26 @@
 
 // Mobile first
 
-/* @mixin viewport--md {
+@mixin viewport-mf--md {
   @media (min-width: $viewport--md) {
     @content;
   }
 }
 
-@mixin viewport--lg {
+@mixin viewport-mf--lg {
   @media (min-width: $viewport--lg) {
     @content;
   }
 }
 
-@mixin viewport--xl {
+@mixin viewport-mf--xl {
   @media (min-width: $viewport--xl) {
     @content;
   }
 }
 
-@mixin viewport--xxl {
+@mixin viewport-mf--xxl {
   @media (min-width: $viewport--xxl) {
     @content;
   }
-} */
+}

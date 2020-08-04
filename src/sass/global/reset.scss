@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
+// решение для плавного скролла, отлично работает в хроме и мозилле, не работает в сафари
 // html {
 //   scroll-behavior: smooth;
+// }
+// section {
+//   scroll-margin-top: 80px; // 80px высота хедера
 // }
 
 a {
@@ -30,7 +34,3 @@ button,
 [type="submit"] {
   appearance: none;
 }
-
-// section {
-//   scroll-margin-top: 80px;
-// }

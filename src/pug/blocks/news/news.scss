@@ -1,0 +1,163 @@
+.news {
+  padding: 50px 0 20px;
+
+  background-color: $color-bg-grey;
+}
+
+.news__title {
+  position: relative;
+
+  margin: 0 0 25px;
+  padding: 0;
+}
+
+.news__title svg {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+
+  transform: translateY(-40%);
+
+  fill: $color-light-black;
+}
+
+.news__wrapper {
+  position: relative;
+}
+
+.news__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+
+  display: none;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  background-color: $color-default-white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 0 rgba($color-light-black, 0.2);
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  transition: box-shadow $default-transition;
+
+  &--left {
+    left: -24px;
+  }
+
+  &--right {
+    right: -24px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 3px 0 rgba($color-green, 0.5);
+
+    & svg {
+      fill: $color-green;
+    }
+  }
+}
+
+.news__arrow svg {
+  transition: fill $default-transition;
+
+  fill: rgba($color-light-black, 0.5);
+}
+
+.news__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.news__card {
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  background-color: $color-default-white;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 0 rgba($color-light-black, 0.2);
+}
+
+.news__link:hover .news__card-title {
+  color: $color-blue;
+}
+
+.news__link:hover img {
+  transform: scale(1.1);
+}
+
+.news__image {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 25px;
+  padding-bottom: 56.25%;
+}
+
+.news__image img {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform $slow-transition;
+
+  object-fit: cover;
+}
+
+.news__date {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.news__date svg {
+  margin-right: 20px;
+
+  fill: $color-red;
+}
+
+.news__date span {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: $color-dark-green;
+}
+
+.news__card-title {
+  margin: 0 0 20px;
+  padding: 0 20px;
+
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: $color-light-black;
+
+  transition: color $default-transition;
+}
+
+.news__link {
+  margin: 10px auto 10px;
+}
+
+@include viewport-mf--md {
+  .news__title {
+    margin: 0 0 50px;
+  }
+}
+
+@include viewport-mf--lg {
+  .news__arrow {
+    display: block;
+  }
+
+  .news__title svg {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+include ../svg/svg.pug
+
+mixin news
+    section.news#news
+      div.container
+        h2.news__title.site-title Последние новости
+          +svg('icon-arrow')(width="24" height="24" aria-label="Стрелка")
+        div.news__wrapper
+          button(aria-label="Предыдущий слайд").news__arrow.news__arrow--left
+            +svg('icon-left')(width="32" height="32" aria-label="Стрелка")
+          button(aria-label="Следующий слайд").news__arrow.news__arrow--right
+            +svg('icon-right')(width="32" height="32" aria-label="Стрелка")
+          div.news__container.swiper-container
+            ul.news__list.swiper-wrapper
+              li.news__card.swiper-slide
+                a(href="#" aria-label="Перейти к чтению новости").news__link
+                  div.news__image
+                    picture
+                      source(type="image/webp", srcset=`${require("../../img/news/post-1-420x368@1x.webp").default} 1x, ${require("../../img/news/post-1-420x368@2x.webp").default} 2x`)
+                      img(src=require("../../img/news/post-1-420x368@1x.jpg").default, srcset=`${require("../../img/news/post-1-420x368@2x.jpg").default} 2x`, alt="Изображение новости" width="420" height="368")
+                  div.news__date
+                    +svg('icon-calendar')(width="20" height="20" aria-label="Иконка")
+                    span 29 апреля 2020 года 9:27
+                  h2.news__card-title Появилась возможность оплаты услуги через мобильное приложение Госбанка ЛНР
+              li.news__card.swiper-slide
+                a(href="#" aria-label="Перейти к чтению новости").news__link
+                  div.news__image
+                    picture
+                      source(type="image/webp", srcset=`${require("../../img/news/post-2-420x368@1x.webp").default} 1x, ${require("../../img/news/post-2-420x368@2x.webp").default} 2x`)
+                      img(src=require("../../img/news/post-2-420x368@1x.jpg").default, srcset=`${require("../../img/news/post-2-420x368@2x.jpg").default} 2x`, alt="Изображение новости" width="420" height="368")
+                  div.news__date
+                    +svg('icon-calendar')(width="20" height="20" aria-label="Иконка")
+                    span 29 апреля 2020 года 9:27
+                  h2.news__card-title Появилась возможность оплаты услуги через мобильное приложение Госбанка ЛНР
+              li.news__card.swiper-slide
+                a(href="#" aria-label="Перейти к чтению новости").news__link
+                  div.news__image
+                    picture
+                      source(type="image/webp", srcset=`${require("../../img/news/post-3-420x368@1x.webp").default} 1x, ${require("../../img/news/post-3-420x368@2x.webp").default} 2x`)
+                      img(src=require("../../img/news/post-3-420x368@1x.jpg").default, srcset=`${require("../../img/news/post-3-420x368@2x.jpg").default} 2x`, alt="Изображение новости" width="420" height="368")
+                  div.news__date
+                    +svg('icon-calendar')(width="20" height="20" aria-label="Иконка")
+                    span 29 апреля 2020 года 9:27
+                  h2.news__card-title Появилась возможность оплаты услуги через мобильное приложение Госбанка ЛНР
+              li.news__card.swiper-slide
+                a(href="#" aria-label="Перейти к чтению новости").news__link
+                  div.news__image
+                    picture
+                      source(type="image/webp", srcset=`${require("../../img/news/post-4-420x368@1x.webp").default} 1x, ${require("../../img/news/post-4-420x368@2x.webp").default} 2x`)
+                      img(src=require("../../img/news/post-4-420x368@1x.jpg").default, srcset=`${require("../../img/news/post-4-420x368@2x.jpg").default} 2x`, alt="Изображение новости" width="420" height="368")
+                  div.news__date
+                    +svg('icon-calendar')(width="20" height="20" aria-label="Иконка")
+                    span 29 апреля 2020 года 9:27
+                  h2.news__card-title Появилась возможность оплаты услуги через мобильное приложение Госбанка ЛНР
+        a(href="news.html" aria-label="Открыть все новости").news__link.button все новости
