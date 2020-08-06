@@ -1,12 +1,14 @@
 .faq {
   padding: 50px 0 0;
-
-  background-color: $color-bg-grey;
 }
 
 .faq__title {
   margin: 0 0 25px;
   padding: 0;
+}
+
+.faq__image {
+  display: none;
 }
 
 .faq__list {
@@ -21,7 +23,7 @@
   padding: 15px 0 15px 15px;
   overflow: hidden;
 
-  background-color: $color-default-white;
+  background-color: rgba($color-bg-grey, 0.3);
   border: 1px solid rgba($color-light-black, 0.2);
   border-radius: 10px;
 
@@ -32,19 +34,16 @@
   position: relative;
 
   padding-right: 60px;
-
-  background-color: $color-default-white;
 }
 
 .faq__answer-wrapper {
-  // height: 0;
   overflow: hidden;
 
-  transition: all $slow-transition;
+  transition: height 0.5s ease-in-out;
+}
 
-  &--hidden {
-    height: 0;
-  }
+.faq__answer-wrapper[data-collapsed = true] {
+  height: 0;
 }
 
 .faq__item button {
@@ -99,32 +98,42 @@
   fill: $color-red;
 }
 
-@mixin viewport-mf--md {
-  @media (min-width: $viewport--md) {
-    @content;
+.faq__link {
+  margin: 25px auto 0;
+}
+
+@media (min-width: $viewport--lg) {
+  .faq__container {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .faq__image {
+    display: block;
+    flex-shrink: 0;
+    width: 50%;
+  }
+
+  .faq__list {
+    flex-shrink: 0;
+    width: 50%;
+  }
+
+  .faq__image img {
+    width: 100%;
+    height: 480px;
+
+    object-fit: contain;
+    object-position: center;
   }
 }
 
-@mixin viewport-mf--lg {
-  @media (min-width: $viewport--lg) {
-    @content;
+@media (min-width: 1300px) {
+  .faq__image {
+    width: 40%;
   }
-}
 
-@mixin viewport-mf--xl {
-  @media (min-width: $viewport--xl) {
-    @content;
+  .faq__list {
+    width: 60%;
   }
-}
-
-@mixin viewport-mf--xxl {
-  @media (min-width: $viewport--xxl) {
-    @content;
-  }
-}
-
-.hidden {
-  height: 0;
-
-  transition: none;
 }

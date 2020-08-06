@@ -4,46 +4,50 @@ mixin faq
     section.faq#faq
       div.container
         h2.faq__title.site-title Часто задаваемые вопросы
-        ul.faq__list
-          li.faq__item
-            div.faq__wrapper
-              button(aria-label="Открыть содержимое таба")
-                +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
-              h3 Как мне настроить новый роутер?
-            div(data-collapsed="true").faq__answer-wrapper.faq__answer-wrapper--hidden
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
-          li.faq__item
-            div.faq__wrapper
-              button(aria-label="Открыть содержимое таба")
-                +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
-              h3 Не получается дозвониться в службу поддержки.
-            div(data-collapsed="true").faq__answer-wrapper.faq__answer-wrapper--hidden
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
-          li.faq__item
-            div.faq__wrapper
-              button(aria-label="Открыть содержимое таба")
-                +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
-              h3 Как мне пополнить счёт с помощью карты оплаты?
-            div(data-collapsed="true").faq__answer-wrapper.faq__answer-wrapper--hidden
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
-          li.faq__item
-            div.faq__wrapper
-              button(aria-label="Открыть содержимое таба")
-                +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
-              h3 Где можно увидеть все мои оплаты и списания со счёта?
-            div(data-collapsed="true").faq__answer-wrapper.faq__answer-wrapper--hidden
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
-          li.faq__item
-            div.faq__wrapper
-              button(aria-label="Открыть содержимое таба")
-                +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
-              h3 Как мне проверить свою скорость?
-            div(data-collapsed="true").faq__answer-wrapper.faq__answer-wrapper--hidden
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
-          li.faq__item
-            div.faq__wrapper
-              button(aria-label="Открыть содержимое таба")
-                +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
-              h3 Как мне получить перерасчёт если я не пользовался услугой?
-            div(data-collapsed="true").faq__answer-wrapper.faq__answer-wrapper--hidden
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+        div.faq__container
+          div.faq__image
+            img(src=require("../../img/svg/faq.svg").default width="500")
+          ul.faq__list
+            li.faq__item
+              div.faq__wrapper
+                button(aria-label="Открыть содержимое таба")
+                  +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
+                h3 Как мне настроить новый роутер?
+              div(data-collapsed="true").faq__answer-wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+            li.faq__item
+              div.faq__wrapper
+                button(aria-label="Открыть содержимое таба")
+                  +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
+                h3 Не получается дозвониться в службу поддержки.
+              div(data-collapsed="true").faq__answer-wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+            li.faq__item
+              div.faq__wrapper
+                button(aria-label="Открыть содержимое таба")
+                  +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
+                h3 Как мне пополнить счёт с помощью карты оплаты?
+              div(data-collapsed="true").faq__answer-wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+            li.faq__item
+              div.faq__wrapper
+                button(aria-label="Открыть содержимое таба")
+                  +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
+                h3 Где можно увидеть все мои оплаты и списания со счёта?
+              div(data-collapsed="true").faq__answer-wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+            li.faq__item
+              div.faq__wrapper
+                button(aria-label="Открыть содержимое таба")
+                  +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
+                h3 Как мне проверить свою скорость?
+              div(data-collapsed="true").faq__answer-wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+            li.faq__item
+              div.faq__wrapper
+                button(aria-label="Открыть содержимое таба")
+                  +svg('icon-tab')(width="32" height="32" aria-label="Иконка")
+                h3 Как мне получить перерасчёт если я не пользовался услугой?
+              div(data-collapsed="true").faq__answer-wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam sint dolor soluta, quis labore ut magni aspernatur facilis vero quos est sequi commodi eligendi! Provident rerum at magnam amet libero repudiandae distinctio fugit! Repellat non, explicabo id optio incidunt adipisci reiciendis quis tenetur enim odio voluptas cumque aliquam error.
+        a(href="faq.html" aria-label="Открыть все вопросы").faq__link.button.button--yellow все вопросы
