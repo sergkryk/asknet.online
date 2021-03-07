@@ -108,10 +108,15 @@
     flex-flow: row nowrap;
   }
 
+  .faq__title {
+    margin-bottom: 50px;
+  }
+
   .faq__image {
     display: block;
     flex-shrink: 0;
-    width: 50%;
+    width: 45%;
+    margin-right: 5%;
   }
 
   .faq__list {

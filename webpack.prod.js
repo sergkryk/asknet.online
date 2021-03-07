@@ -24,7 +24,7 @@ module.exports = {
   entry: `${PATHS.src}/index.js`, // точка входа
 
   output: {
-    filename: 'js/main.js',
+    filename: 'js/main.[contenthash].js',
     path: `${PATHS.dist}`,
   },
 
@@ -163,6 +163,7 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: false,
     }),
+    // svg спрайт
     new SpritePlugin(),
     // css отдельным файлом
     new MiniCssExtractPlugin({
