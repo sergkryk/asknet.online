@@ -48,8 +48,22 @@
     </header>
     <main>
       <div class="container">
-        <section class="about">
-          <h1>Интернет-провайдер ASKnet</h1>
+        <section class="login">
+          <div class="login__container container">
+            <h2>Вход в личный кабинет</h2>
+            <p>Введите ваши учётные данные для входа</p>
+            <form id="login">
+              <div class="base-input">
+                <input type="text" id="userLogin" placeholder="Лицевой счёт" />
+                <label for="userLogin">Лицевой счёт</label>
+              </div>
+              <div class="base-input">
+                <input type="password" id="userPassword" placeholder="Пароль" />
+                <label for="userPassword">Пароль</label>
+              </div>
+              <button type="submit">Войти</button>
+            </form>
+          </div>
         </section>
       </div>
     </main>

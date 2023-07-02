@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const mode = process.env.NODE_ENV;
 
 // multiple html pages
-let htmlPageNames = ['about'];
+let htmlPageNames = ['about', 'user'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     title: "Hello",
     template: `./src/${name}.html`, // relative path to the HTML files
     filename: `${name}.html`, // output HTML files
-    chunks: [`${name}`] // respective JS files
+    chunks: ['main', `${name}`] // respective JS files
   })
 });
 

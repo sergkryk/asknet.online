@@ -1,0 +1,93 @@
+.base-input {
+  position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  color: var(--font-color);
+  --border: 1px;
+
+  font-size: var(--fsize);
+  line-height: var(--lheight);
+
+  --inputPadding: 1rem;
+  --fsize: 1rem;
+  --lheight: 1.4rem;
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  & .valid {
+    color: var(--color-green);
+    --border-color: var(--color-green);
+  }
+  & .invalid {
+    color: var(--color-red);
+    --border-color: var(--color-lightred);
+  }
+
+  label {
+    position: absolute;
+    top: calc(
+      ((var(--inputPadding) * 2 + var(--border) * 2 + var(--lheight)) / 2) -
+        var(--lheight) / 2
+    );
+    left: calc(var(--inputPadding) - var(--labelPadding));
+
+    padding: 0 var(--labelPadding);
+
+    transition: top 0.3s ease-in-out, left 0.3s ease-in-out,
+      font-size 0.3s ease-in-out;
+    // color: var(--font-color-light);
+
+    color: inherit;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    --labelPadding: 3px;
+  }
+  input {
+    min-width: 100%;
+    min-height: 100%;
+    padding: var(--inputPadding);
+
+    color: inherit;
+    border: var(--border) solid var(--border-color);
+    border-radius: 0.5rem;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    &::placeholder {
+      opacity: 0;
+
+      font-size: 0;
+    }
+    &:focus,
+    &:focus-visible,
+    &:active {
+      outline: none;
+    }
+  }
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    top: calc(1.2rem / 2) * -1;
+
+    color: currentColor;
+    background-color: var(--color-white);
+
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  span {
+    position: absolute;
+    bottom: calc(var(--inputPadding) * -1.3);
+    left: 0;
+
+    color: inherit;
+
+    font-size: 0.75rem;
+  }
+}
