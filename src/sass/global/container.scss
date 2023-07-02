@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 4vw, 3rem);;
+  padding-right: clamp(1rem, 4vw, 3rem);;
+}

@@ -1,0 +1,14 @@
+.main-heading {
+  --size: clamp(1.625rem, 0.75vw + 1.4375rem, 2rem);
+  margin: 0;
+  font-weight: 500;
+  font-size: var(--size);
+  line-height: calc(var(--size) * 1.25);
+}
+
+.modal-heading {
+  --fsize: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+  text-align: center;
+  font-size: var(--fsize);
+  line-height: calc(var(--fsize) * 1.25);
+}

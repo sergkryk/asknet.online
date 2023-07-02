@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// решение для плавного скролла, отлично работает в хроме и мозилле, не работает в сафари
+// html {
+//   scroll-behavior: smooth;
+// }
+// section {
+//   scroll-margin-top: 80px; // 80px высота хедера
+// }
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: none;
+}

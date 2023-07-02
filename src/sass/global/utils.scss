@@ -1,0 +1,103 @@
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  clip: rect(0 0 0 0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  background-color: transparent;
+
+  &--active {
+    z-index: unset;
+
+    background-color: rgba(0,0,0,0.5);
+  }
+}
+
+.site-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: 0px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  text-decoration: none;
+
+  font-weight: 700;
+  line-height: 1.75;
+  font-size: 1rem;
+  text-transform: capitalize;
+
+  min-width: 64px;
+  padding: 0.5rem 3rem;
+  border-radius: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgb(33, 43, 54);
+  background-color: var(--color-yellow);
+  box-shadow: rgb(255 193 7 / 24%) 0px 8px 16px 0px;
+
+  &:hover {
+    box-shadow: none;
+    background-color: var(--color-dark-yellow);
+  }
+
+  &--green {
+    color: var(--color-white);
+    background-color: var(--color-green);
+    box-shadow: rgb(0 171 85 / 24%) 0px 8px 16px 0px;
+
+    &:hover {
+      background-color: var(--color-dark-green);
+    }
+  }
+
+  &--blue {
+    color: var(--color-white);
+    background-color: var(--color-lightblue);
+    box-shadow: rgb(24 144 255 / 24%) 0px 8px 16px 0px;
+
+    &:hover {
+      background-color: var(--color-blue);
+    }
+  }
+  &--red {
+    color: var(--color-white);
+    background-color: var(--color-red);
+    box-shadow: rgb(183 33 54 / 24%) 0px 8px 16px 0px;
+
+    &:hover {
+      background-color: var(--color-dark-red);
+    }
+  }
+
+  &--small {
+    padding: 0.2rem 1.5rem;
+    font-size: 0.8rem;
+
+    background-color: transparent;
+    border: 2px solid var(--color-lightblue);
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: rgb(24 144 255 / 24%) 0px 8px 16px 0px;
+      background-color: transparent;
+    }
+  }
+}

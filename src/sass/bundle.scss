@@ -1,0 +1,15 @@
+@import "./normalize.scss";
+
+// Global
+//---------------------------------
+@import "./global/variables";
+@import "./global/fonts";
+@import "./global/typography";
+@import "./global/utils";
+@import "./global/reset";
+@import "./global/container";
+@import "./global/headings";
+
+
+@import "./components/header.scss";
+@import "./components/hero.scss";
