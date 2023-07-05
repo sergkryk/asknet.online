@@ -1,52 +1,40 @@
 html {
+  --border-color: rgba(145, 158, 171, 0.32);
+  --border-radius: 1rem;
+  --box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+
   --font-color: #212b36;
   --font-color-light: #637381;
   --site-blue: #2096f3;
   --site-green: #4caf50;
   --site-red: #ff4842;
-
   --site-yellow: #ffc009;
-
   --color-white: #ffffff;
   --color-green: #04ab55;
   --color-red: #b72136;
   --color-blue: #0c53b7;
   --color-yellow: #ffc107;
   --color-violet: #985efe;
-
   --color-dark-green: #007b55;
   --color-dark-yellow: #b78103;
   --color-dark-red: #701421;
-
   --color-lightblue: #1890ff;
   --color-lightred: #f30827;
-
   --error-color: #f44336;
   --success-color: #3cc79e;
-
   --header-text: #f8f8f8;
   --header-dark-text: #5d6678;
   --header-hover-text: #2196f3;
   --header-stroke: #4caf50;
-
   --pricing-bg: #fbfbfb;
   --pricing-shadow: rgba(93, 102, 120, 0.2);
   --pricing-descr: #5d6678;
-
   --hero-overlay: rgba(18, 71, 114, 0.8);
-
   --color-lightblue-transparent: rgba(24, 144, 255, 0.5);
   --color-green-transparent: rgba(5, 171, 85, 0.5);
-
-  --border-radius: 1rem;
-
-  --border-color: rgba(145, 158, 171, 0.32);
-
-  --box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
-    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
-
+  --box-shadow-v2: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   --default-transition: 0.3s ease-in-out;
-
   --header-height: clamp(3.75rem, 2.5vw + 3.125rem, 5rem);
   --card-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
     rgba(145, 158, 171, 0.12) 0px 6px 12px -4px;
