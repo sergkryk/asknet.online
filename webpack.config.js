@@ -4,23 +4,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const mode = process.env.NODE_ENV;
 
 // multiple html pages
-let htmlPageNames = ["about", "user", "news"];
-let multipleHtmlPlugins = htmlPageNames.map((name) => {
-  return new HtmlWebpackPlugin({
-    title: "Hello",
-    template: `./src/${name}.html`, // relative path to the HTML files
-    filename: `${name}.html`, // output HTML files
-    chunks: ["main", `${name}`], // respective JS files
-  });
-});
+let htmlPages = ["index", "about", "user", "news"];
+// news pages
+let newsPages = ["iptv"];
 
 module.exports = {
   mode: mode,
-  entry: {
-    main: "./src/index.js",
-    about: "./src/about.js",
-    user: "./src/user.js",
-  },
+  entry: htmlPages.reduce((config, page) => {
+    config[page] = `./src/${page}.js`;
+    return config;
+  }, {}),
   output: {
     filename: "js/[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
@@ -78,16 +71,31 @@ module.exports = {
       },
     ],
   },
-  plugins: [
+  plugins: 
+  [
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
       chunkFilename: "[id].css",
-    }),
-    new HtmlWebpackPlugin({
-      title: "Test bundle",
-      filename: "index.html",
-      template: "src/index.html",
-      chunks: ["main"],
-    }),
-  ].concat(multipleHtmlPlugins),
+    })
+  ].concat(
+    htmlPages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: `./src/${page}.html`,
+          filename: `${page}.html`,
+          chunks: ["index", page],
+        })
+    )
+  ).concat(
+    newsPages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: `./src/news/${page}.html`,
+          filename: `./news/${page}.html`,
+          chunks: ["index", page],
+        })
+    )
+  ),
 };
