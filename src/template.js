@@ -1,3 +1,8 @@
+const currencyOpt = {
+  style: "currency",
+  currency: "RUB",
+};
+
 function formatBillNumber(string) {
   return string.split("_")[1];
 }
@@ -9,11 +14,11 @@ function formatPhoneNumber(num) {
   };
   const str = String(num);
   const cleaned = str.replace(/\D/g, "");
-  const match = cleaned.match(/^(\d{2})(\d{3})(\d{2})(\d{2})$/);
+  const match = cleaned.match(/^(\d[7(2|1)])(\d{3})(\d{2})(\d{2})$/);
   if (match) {
     return `+7 (${countryCodes[match[1]]}) ${match[2]}-${match[3]}-${match[4]}`;
   }
-  return "нет данных";
+  return "нет номера телефона";
 }
 
 function formatCity(city) {
@@ -52,11 +57,7 @@ function formatAddress(address) {
 }
 
 function formatDeposit(sum) {
-  const options = {
-    style: "currency",
-    currency: "RUB",
-  };
-  return new Intl.NumberFormat("ru-RU", options).format(Number(sum));
+  return new Intl.NumberFormat("ru-RU", currencyOpt).format(Number(sum));
 }
 
 function formatStatus(user, userDeposit) {
@@ -72,9 +73,80 @@ function formatStatus(user, userDeposit) {
   return "нет оплаты";
 }
 
+function formatFee(tarif) {
+  if (tarif?.month_fee) {
+    return `${new Intl.NumberFormat("ru-RU", currencyOpt).format(
+      Number(tarif.month_fee)
+    )} / месяц`;
+  } else {
+    return `${new Intl.NumberFormat("ru-RU", currencyOpt).format(
+      Number(tarif.day_fee)
+    )} / сутки`;
+  }
+}
+
+function formatDateToLocale(date) {
+  const options = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  return date.toLocaleDateString("ru-RU", options);
+}
+
+function calcNextFeeDate(tarif) {
+  let d = new Date();
+  if (tarif?.month_fee) {
+    d.setMonth(d.getMonth() + 1, 1);
+  } else {
+    d.setDate(d.getDate() + 1);
+  }
+  return formatDateToLocale(d);
+}
+
+function renderUserListItem(heading, date) {
+  return `<li class="user__item user__item--next">
+  <span>${heading}</span>
+  <span>${date}</span>
+</li>`;
+}
+
+function calcExpMonth(deposit, fee) {
+  const m = Math.floor(Number(deposit) / Number(fee)) + 1;
+  let d = new Date();
+  d.setMonth(d.getMonth() + m, 1);
+  return formatDateToLocale(d);
+}
+
+function calcExpDay(deposit, fee) {
+  const m = Math.floor(Number(deposit) / Number(fee));
+  let d = new Date();
+  d.setDate(d.getDate() + m);
+  return formatDateToLocale(d);
+}
+
+function renderExpDate(deposit, tarif) {
+  if (Number(deposit) <= 0) {
+    return "";
+  }
+  if (tarif?.month_fee) {
+    return renderUserListItem('Активен до', calcExpMonth(deposit, tarif?.month_fee));
+  }
+  if (tarif?.day_fee) {
+    return renderUserListItem('Активен до', calcExpDay(deposit, tarif?.day_fee));
+  }
+}
+
+function renderNextFee(deposit, tarif) {
+  if (Number(deposit) <= 0) {
+    return "";
+  } else {
+    return renderUserListItem("Следующее списание", calcNextFeeDate(tarif))
+  }
+}
+
 function userPage(user) {
   const [general, pi, bill, tarif] = user;
-  console.log(tarif);
   return `        <section class="user">
   <h1 class="user__title">Личный кабинет абонента</h1>
   <div class="user__pi">
@@ -93,26 +165,24 @@ function userPage(user) {
       <span>Баланс</span>
       <span>${formatDeposit(bill.deposit)}</span>
     </li>
-    <li class="user__item">
+    <li class="user__item user__item--tarif">
       <span>Статус</span>
       <span>${formatStatus(general, bill?.deposit)}</span>
     </li>
+    ${renderExpDate(bill?.deposit, tarif)}
   </ul>
   <div class="user__tarif">
     <p class="user__tarif-heading">Тарифный план</p>
     <ul class="user__list">
       <li class="user__item user__item--tarif">
         <span>Название</span>
-        <span>Оптимал 100</span>
+        <span>${tarif.name}</span>
       </li>
-      <li class="user__item">
+      <li class="user__item user__item--tarif">
         <span>Стоимость</span>
-        <span>700</span>
+        <span>${formatFee(tarif)}</span>
       </li>
-      <li class="user__item user__item--next">
-        <span>Следующее списание средств</span>
-        <span>01 августа 2023 года</span>
-      </li>
+      ${renderNextFee(bill?.deposit, tarif)}
     </ul>
   </div>
 </section>`;

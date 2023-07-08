@@ -1,0 +1,145 @@
+.news__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  @media(min-width: 768px) {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    grid-gap: 20px;
+  }
+}
+
+.news__item {
+  @media(max-width:767px) {
+    margin-bottom: 20px;
+  }
+}
+
+.news-card {
+  display: flex;
+  overflow: hidden;
+  flex-flow: column nowrap;
+
+  border-radius: 0.5rem;
+  background-color: var(--color-white);
+  box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+}
+.news-card__image {
+  position: relative;
+
+  height: 220px;
+
+  background-color: cornflowerblue;
+
+  picture {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+}
+.news-card__content {
+  position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+
+  padding: 1.5rem;
+}
+
+.news-card__decor {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  line-height: 0;
+}
+
+.news-card__decor svg {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  transform: rotateX(180deg);
+}
+
+.news-card__decor .shape-fill {
+  fill: #ffffff;
+}
+.news-card__date {
+  display: block;
+
+  margin-bottom: var(--size);
+
+  color: var(--font-color-light);
+
+  font-size: var(--size);
+  line-height: calc(var(--size) * 1.25);
+
+  --size: 1rem;
+}
+.news-card__title {
+  display: block;
+
+  margin: 0 0 var(--size);
+
+  transition: color var(--default-transition);
+
+  font-size: var(--size);
+  font-weight: 500;
+  line-height: calc(var(--size) * 1.25);
+
+  --size: 1.625rem;
+
+  &:hover {
+    color: var(--color-lightblue);
+  }
+}
+.news-card__cat {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  margin-top: auto;
+  margin-right: -1.5rem;
+  margin-left: auto;
+  padding: 5px 25px;
+
+  text-transform: uppercase;
+
+  color: var(--color-white);
+  background-color: var(--color-violet);
+
+  font-size: var(--size);
+  line-height: calc(var(--size) * 1.2);
+
+  --size: 0.8rem;
+
+  svg {
+    position: absolute;
+    top: calc(50% - (var(--size) / 2));
+    left: 5px;
+
+    width: var(--size);
+    height: var(--size);
+    margin-right: 5px;
+  }
+}

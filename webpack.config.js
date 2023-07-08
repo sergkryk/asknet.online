@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const mode = process.env.NODE_ENV;
 
 // multiple html pages
-let htmlPageNames = ["about", "user"];
+let htmlPageNames = ["about", "user", "news"];
 let multipleHtmlPlugins = htmlPageNames.map((name) => {
   return new HtmlWebpackPlugin({
     title: "Hello",
