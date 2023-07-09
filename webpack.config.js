@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const mode = process.env.NODE_ENV;
 
 // multiple html pages
-let htmlPages = ["index", "about", "user", "news"];
+let htmlPages = ["index", "about", "user", "news", "tariffs"];
 // news pages
 let newsPages = ["iptv"];
 
@@ -24,7 +24,7 @@ module.exports = {
         .split("/")
         .slice(1)
         .join("/");
-      return `${filepath}/[name].[hash][ext][query]`;
+      return `${filepath}/[name][ext][query]`;
     },
   },
   devtool: "source-map",
@@ -76,9 +76,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
       chunkFilename: "[id].css",
-    })
-  ].concat(
-    htmlPages.map(
+    }),
+    ...htmlPages.map(
       (page) =>
         new HtmlWebpackPlugin({
           inject: true,
@@ -86,9 +85,8 @@ module.exports = {
           filename: `${page}.html`,
           chunks: ["index", page],
         })
-    )
-  ).concat(
-    newsPages.map(
+    ),
+    ...newsPages.map(
       (page) =>
         new HtmlWebpackPlugin({
           inject: true,
@@ -97,5 +95,5 @@ module.exports = {
           chunks: ["index", page],
         })
     )
-  ),
+  ]
 };

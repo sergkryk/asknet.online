@@ -4,7 +4,7 @@
   flex-grow: 1;
   justify-content: center;
 
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: calc(var(--vh, 1vh) * 100 - var(--header-height));
 
   h2 {
     margin: 0 0 8px;

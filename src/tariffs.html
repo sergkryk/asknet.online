@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новости</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="header__logo">
+        <img src="./assets/img/svg/logo.svg" width="150" />
+      </a>
+      <nav class="header__nav">
+        <div class="header__toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul class="header__list">
+            <li class="header__item">
+              <a class="header__link header__link--hover" href="news.html"
+                >Новости</a
+              >
+            </li>
+            <li class="header__item">
+              <a class="header__link header__link--hover" href="tariffs.html"
+                >Тарифы</a
+              >
+            </li>
+            <li class="header__item">
+              <a class="header__link header__link--hover" href="help.html"
+                >Помощь</a
+              >
+            </li>
+            <li class="header__item">
+              <a class="header__link header__link--hover" href="about.html"
+                >О нас</a
+              >
+            </li>
+            <li class="header__item">
+              <a class="header__link header__link--hover" href="user.html"
+                >Личный кабинет</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="display: none"
+      >
+        <symbol id="calendar" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20.4 4.65H3.6a2.102 2.102 0 0 0-2.1 2.1V19.7a2.102 2.102 0 0 0 2.1 2.1h16.8a2.102 2.102 0 0 0 2.1-2.1V6.75a2.102 2.102 0 0 0-2.1-2.1zm0 16.45H3.6a1.4 1.4 0 0 1-1.4-1.4V9.2h19.6v10.5a1.4 1.4 0 0 1-1.4 1.4zM17.95 3.95V2.2a.7.7 0 0 0-1.4 0v1.75zm-10.5 0V2.2a.7.7 0 0 0-1.4 0v1.75z"
+          ></path>
+          <path
+            d="M7.498 15.942a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1h-2.2a1 1 0 0 1-1-1v-1.6a1 1 0 0 1 1-1zm5.602 0a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1h-2.2a1 1 0 0 1-1-1v-1.6a1 1 0 0 1 1-1zm-5.602-5a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1h-2.2a1 1 0 0 1-1-1v-1.6a1 1 0 0 1 1-1zm5.602 0a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1h-2.2a1 1 0 0 1-1-1v-1.6a1 1 0 0 1 1-1zm5.602 0a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1h-2.2a1 1 0 0 1-1-1v-1.6a1 1 0 0 1 1-1z"
+            opacity=".48"
+          ></path>
+        </symbol>
+        <symbol id="macaddress" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16Zm-8.5 3h-5A1.5 1.5 0 0 0 5 7.5v2A1.5 1.5 0 0 0 6.5 11h5A1.5 1.5 0 0 0 13 9.5v-2A1.5 1.5 0 0 0 11.5 6Z"
+          ></path>
+          <path
+            d="M8 21h8m-4-4v4"
+            stroke="currentColor"
+            stroke-width="2"
+            opacity=".48"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </symbol>
+        <symbol id="password" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12.65 10a5.998 5.998 0 0 0-6.88-3.88c-2.29.46-4.15 2.29-4.63 4.58A6.006 6.006 0 0 0 7 18a5.99 5.99 0 0 0 5.65-4H17v2c0 1.1.9 2 2 2s2-.9 2-2v-2c1.1 0 2-.9 2-2s-.9-2-2-2h-8.35zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+          ></path>
+        </symbol>
+        <symbol id="enabled" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.3 7.61-4.57 6a1 1 0 0 1-.79.39 1 1 0 0 1-.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22Z"
+          ></path>
+        </symbol>
+        <symbol id="speedometr" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="m20.38 8.57-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44z"
+          ></path>
+          <path
+            d="M10.59 15.41a2 2 0 0 0 2.83 0l5.66-8.49-8.49 5.66a2 2 0 0 0 0 2.83z"
+            opacity=".48"
+          ></path>
+        </symbol>
+        <symbol id="user" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" opacity=".48"></path>
+          <path d="M18 21a1 1 0 0 0 1-1 7 7 0 1 0-14 0 1 1 0 0 0 1 1z"></path>
+        </symbol>
+        <symbol id="disabled" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm2.71 11.29a1 1 0 0 1 0 1.42a1 1 0 0 1-1.42 0L12 13.41l-1.29 1.3a1 1 0 0 1-1.42 0a1 1 0 0 1 0-1.42l1.3-1.29l-1.3-1.29a1 1 0 0 1 1.42-1.42l1.29 1.3l1.29-1.3a1 1 0 0 1 1.42 1.42L13.41 12Z"
+          ></path>
+        </symbol>
+        <symbol id="bin" viewBox="0 0 64 64" fill="currentColor">
+          <path
+            d="M28 9a2 2 0 0 0-2 2v1H14a2 2 0 0 0 0 4h1v30c0 3.309 2.691 6 6 6h22c3.309 0 6-2.691 6-6V16h1a2 2 0 0 0 0-4H38v-1a2 2 0 0 0-2-2h-8zm-9 7h26v30c0 1.103-.897 2-2 2H21c-1.103 0-2-.897-2-2V16zm4.5 4a1.5 1.5 0 0 0-1.5 1.5v21a1.5 1.5 0 1 0 3 0v-21a1.5 1.5 0 0 0-1.5-1.5zm8.5 0a2 2 0 0 0-2 2v20a2 2 0 0 0 4 0V22a2 2 0 0 0-2-2zm8.5 0a1.5 1.5 0 0 0-1.5 1.5v21a1.5 1.5 0 1 0 3 0v-21a1.5 1.5 0 0 0-1.5-1.5z"
+          ></path>
+        </symbol>
+        <symbol
+          id="ok"
+          viewBox="0 0 24 24"
+          width="48"
+          height="48"
+          fill="currentColor"
+        >
+          <path
+            d="M12 2C6.489 2 2 6.489 2 12s4.489 10 10 10 10-4.489 10-10S17.511 2 12 2zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8zm4.293 4.293L10 14.586l-2.293-2.293-1.414 1.414L10 17.414l7.707-7.707-1.414-1.414z"
+          ></path>
+        </symbol>
+        <symbol
+          id="reject"
+          viewBox="0 0 64 64"
+          width="48"
+          height="48"
+          fill="currentColor"
+        >
+          <path
+            d="M32 10c-12.15 0-22 9.85-22 22s9.85 22 22 22 22-9.85 22-22-9.85-22-22-22zm0 4c9.941 0 18 8.059 18 18 0 4.25-1.483 8.147-3.945 11.227L20.773 17.945A17.911 17.911 0 0 1 32 14zm-14.055 6.773 25.282 25.282A17.911 17.911 0 0 1 32 50c-9.941 0-18-8.059-18-18 0-4.25 1.483-8.147 3.945-11.227z"
+          ></path>
+        </symbol>
+        <symbol
+          id="tv"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path fill="none" d="M0 0h24v24H0V0z"></path>
+          <path
+            d="m10.5 17.15 3.98-2.28c.67-.38.67-1.35 0-1.74l-3.98-2.28c-.67-.38-1.5.11-1.5.87v4.55c0 .77.83 1.26 1.5.88zM21 6h-7.59l2.94-2.94c.2-.2.2-.51 0-.71s-.51-.2-.71 0L12 5.99 8.36 2.35c-.2-.2-.51-.2-.71 0s-.2.51 0 .71L10.59 6H3a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8a2 2 0 0 0-2-2zm-1 14H4c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1z"
+          ></path>
+        </symbol>
+        <symbol
+          id="youtube"
+          viewBox="0 0 2048 2048"
+          shape-rendering="geometricPrecision"
+          text-rendering="geometricPrecision"
+          image-rendering="optimizeQuality"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        >
+          <path
+            d="M1688.02 565.913c-30.376-27.574-68.845-45.658-110.919-50.307-91.447-10.235-183.723-15.387-276.305-17.97-91.988-2.566-184.37-2.566-276.547-2.512-92.164-.054-184.54-.054-276.54 2.512-92.593 2.583-184.896 7.735-276.395 17.97-42.033 4.651-80.486 22.744-110.834 50.33-30.155 27.408-52.31 64.218-62.002 106.533-13.084 56.72-19.703 115.899-23.047 175.445-3.357 59.798-3.44 118.839-3.44 176.156 0 57.24 0 116.205 3.278 176.039 3.262 59.519 9.801 118.696 22.892 175.426 9.75 42.331 31.916 79.152 62.069 106.56 30.33 27.57 68.744 45.651 110.766 50.303 91.51 10.234 183.814 15.386 276.407 17.968 91.998 2.565 184.375 2.565 276.552 2.512 92.218.053 184.593.053 276.579-2.512 92.58-2.582 184.856-7.734 276.356-17.968 42.013-4.651 80.42-22.727 110.763-50.29 30.167-27.404 52.364-64.229 62.178-106.573 13.033-56.732 19.573-115.91 22.847-175.426 3.23-58.693 3.257-118.234 3.253-176.04h.062v-2.901h-.062c.002-114.85.002-236.492-25.783-348.698-9.75-42.333-31.94-79.15-62.128-106.556zm-869.905 686.521V739.357l23.375 12.205c70.804 36.967 141.403 73.807 212.066 110.68 85.009 44.358 170.118 88.77 255.803 133.518l27.168 14.189-27.23 14.123-233.934 121.313a754571.677 754571.677 0 0 1-233.935 121.236l-23.313 12.076v-26.263z"
+            fill="currentColor"
+          ></path>
+          <path fill="none" d="M0 0h2048v2048H0z"></path>
+        </symbol>
+        <symbol id="support" viewBox="0 0 32 32" fill="currentColor">
+          <path
+            d="M16 2C9.4 2 4 7.3 4 13.9V18c0 2.8 2.2 5 5 5 .6 0 1-.4 1-1v-8c0-.6-.4-1-1-1-1.1 0-2.2.4-3 1v-.2C6 8.4 10.5 4 16 4s10 4.4 10 9.9v.1c-.8-.6-1.9-1-3-1-.6 0-1 .4-1 1v8c0 .6.4 1 1 1 .7 0 1.4-.2 2-.4-1 2.1-2.8 3.7-5 4.6V27c0-.6-.4-1-1-1h-3c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1 6.6 0 12-5.2 12-11.6v-4.5C28 7.3 22.6 2 16 2z"
+          ></path>
+        </symbol>
+        <symbol
+          id="rocket"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.861 19.066a.502.502 0 0 1-.354-.146L5.08 12.493a.5.5 0 0 1-.02-.687L9.877 6.41c3.367-3.939 8.85-6.488 13.631-6.407a.5.5 0 0 1 .488.488c.111 4.784-2.467 10.264-6.416 13.638l-5.387 4.81a.495.495 0 0 1-.332.127zm-5.74-6.946 5.759 5.759 5.043-4.502c3.606-3.082 6.001-7.994 6.075-12.375-4.381.073-9.292 2.468-12.368 6.066z"
+          ></path>
+          <path
+            d="M13.776 22.726a.464.464 0 0 1-.143-.022c-.18-.06-.328-.198-.354-.386l-.686-4.787a.501.501 0 0 1 .99-.142l.536 3.74a11.675 11.675 0 0 0 2.726-7.459.5.5 0 0 1 1 0c0 3.313-1.342 6.556-3.682 8.895-.1.1-.246.161-.387.161zM6.541 11.412a.431.431 0 0 1-.071-.005l-4.787-.686a.5.5 0 0 1-.28-.851 12.692 12.692 0 0 1 8.928-3.715.5.5 0 0 1 0 1c-2.721 0-5.391.983-7.464 2.725l3.745.537a.5.5 0 0 1-.071.995zm10.592-2.046a2.492 2.492 0 0 1-1.768-.731 2.505 2.505 0 0 1 0-3.536 2.503 2.503 0 0 1 3.536 0 2.505 2.505 0 0 1 0 3.536 2.491 2.491 0 0 1-1.768.731zm0-3.998c-.384 0-.769.146-1.061.438a1.504 1.504 0 0 0 0 2.122 1.505 1.505 0 0 0 2.122 0 1.504 1.504 0 0 0 0-2.122 1.503 1.503 0 0 0-1.061-.438zm1.414 2.914h.01zM.5 24a.5.5 0 0 1-.479-.643c.164-.547 1.633-5.381 2.703-6.451a3.094 3.094 0 0 1 4.371 0 3.094 3.094 0 0 1 0 4.371c-1.07 1.07-5.904 2.539-6.451 2.703A.55.55 0 0 1 .5 24zm4.41-6.999c-.536 0-1.071.204-1.479.611-.577.578-1.537 3.159-2.171 5.128 1.968-.634 4.55-1.594 5.127-2.171a2.094 2.094 0 0 0 0-2.957 2.083 2.083 0 0 0-1.477-.611z"
+          ></path>
+        </symbol>
+        <symbol
+          id="www"
+          viewBox="0 0 490 490"
+          style="enable-background: new 0 0 490 490"
+          xml:space="preserve"
+          fill="currentColor"
+        >
+          <path
+            d="M15.312 381.542h214.375v54.865H126.328v30.625h237.344v-30.625H260.313v-54.865h214.375c8.422 0 15.313-6.891 15.313-15.312V38.281c0-8.422-6.891-15.312-15.313-15.312H15.312C6.891 22.969 0 29.859 0 38.281v327.948c0 8.422 6.891 15.313 15.312 15.313zM30.625 53.594h428.75v297.323H30.625V53.594z"
+          ></path>
+          <path
+            d="m379.765 219.612-15.266-60.852h-20.917l-15.941 59.857-13.138-59.857h-30.165l-13.383 60.852-15.267-60.852h-20.917l-15.925 59.857-13.138-59.857h-30.181l-13.368 60.852-15.266-60.852h-20.917l-15.94 59.857-13.139-59.857H78.89l20.81 87.128h19.079l17.288-65.139 17.364 65.139h18.651l18.359-75.613 18.054 75.613h19.079l17.303-65.139 17.35 65.139h18.665l18.36-75.613 18.054 75.613h19.079l17.288-65.139 17.349 65.139h18.666l21.162-87.128h-17.702z"
+          ></path>
+        </symbol>
+        <symbol
+          id="tick"
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          viewBox="0 0 512 512"
+          fill="currentColor"
+        >
+          <path
+            d="M437.3 30 202.7 339.3 64 200.7l-64 64L213.3 478 512 94z"
+          ></path>
+        </symbol>
+        <symbol
+          id="na"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="m13.41 12 6.3-6.29a1 1 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1 1 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l6.29-6.3 6.29 6.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42Z"
+          ></path>
+        </symbol>
+        <symbol
+          id="coins"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          fill="currentColor"
+        >
+          <path
+            d="M512 80c0 18.01-14.3 34.6-38.4 48-29.1 16.1-72.4 27.5-122.3 30.9-3.6-1.7-7.4-3.4-11.2-5C300.6 137.4 248.2 128 192 128c-8.3 0-16.4.2-24.5.6l-1.1-.6C142.3 114.6 128 98.01 128 80c0-44.18 85.1-80 192-80 106 0 192 35.82 192 80zm-351.3 81.1c10.2-.7 20.6-1.1 31.3-1.1 62.2 0 117.4 12.3 152.5 31.4 24.8 13.5 39.5 30.3 39.5 48.6 0 3.1-.7 7.9-2.1 11.7-4.6 13.2-17.8 25.3-35 35.6-.1 0-.3.1-.4.2-.3.2-.6.3-.9.5-35 19.4-90.8 32-153.6 32-59.6 0-112.94-11.3-148.16-29.1-1.87-1-3.69-2.8-5.45-2.9C14.28 274.6 0 258 0 240c0-34.8 53.43-64.5 128-75.4 10.5-1.6 21.4-2.8 32.7-3.5zm231.2 25.5c28.3-4.4 54.2-11.4 76.2-20.5 16.3-6.8 31.4-15.2 43.9-25.5V176c0 19.3-16.5 37.1-43.8 50.9-14.7 7.4-32.4 13.6-52.4 18.4.1-1.7.2-3.5.2-5.3 0-21.9-10.6-39.9-24.1-53.4zM384 336c0 18-14.3 34.6-38.4 48-1.8.1-3.6 1.9-5.4 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.58-12.6-153.61-32C14.28 370.6 0 354 0 336v-35.4c12.45 10.3 27.62 18.7 43.93 25.5C83.44 342.6 135.8 352 192 352c56.2 0 108.6-9.4 148.1-25.9 7.8-3.2 15.3-6.9 22.4-10.9 6.1-3.4 11.8-7.2 17.2-11.2 1.5-1.1 2.9-2.3 4.3-3.4V336zm32-57.9c18.1-5 36.5-9.5 52.1-16 16.3-6.8 31.4-15.2 43.9-25.5V272c0 10.5-5 21-14.9 30.9-16.3 16.3-45 29.7-81.3 38.4.1-1.7.2-3.5.2-5.3v-57.9zM192 448c56.2 0 108.6-9.4 148.1-25.9 16.3-6.8 31.4-15.2 43.9-25.5V432c0 44.2-86 80-192 80C85.96 512 0 476.2 0 432v-35.4c12.45 10.3 27.62 18.7 43.93 25.5C83.44 438.6 135.8 448 192 448z"
+          ></path>
+        </symbol>
+        <symbol
+          id="enter"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          fill="currentColor"
+        >
+          <path
+            d="M416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128c0-53.02-43-96-96-96zm-73.4 201.4-128-128c-12.51-12.51-32.76-12.49-45.25 0-12.5 12.5-12.5 32.75 0 45.25L242.8 224H32c-17.69 0-32 14.3-32 32s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128c12.43-12.53 12.43-32.73-.07-45.23z"
+          ></path>
+        </symbol>
+        <symbol
+          id="hashtag"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="m244.2 217.5 19.3 57.7-59.8 20-19.3-57.7 59.8-20zm41.4 243.7C131.6 507.4 65 471.6 18.8 317.6S8.4 97 162.4 50.8C316.4 4.6 383 40.4 429.2 194.4c46.2 154 10.4 220.6-143.6 266.8zM366.2 265c-3.9-12.2-17.2-18.6-29.4-14.7l-29 9.7-19.3-57.7 29-9.7c12.2-3.9 18.6-17.2 14.7-29.4-3.9-12.2-17.2-18.6-29.4-14.7l-29 9.7-10-30.1c-3.9-12.2-17.2-18.6-29.4-14.7-12.2 3.9-18.6 17.2-14.7 29.4l10 30.1-59.8 20.1-10-30.1c-3.9-12.2-17.2-18.6-29.4-14.7-12.2 3.9-18.6 17.2-14.7 29.4l10 30.1-29 9.7c-12.2 3.9-18.6 17.2-14.7 29.4 3.2 9.3 12.2 15.4 21.5 15.8 4.3.6 7.7-1 36.9-10.7l19.3 57.7-29 9.7c-12.2 3.9-18.6 17.2-14.7 29.4 3.2 9.3 12.2 15.4 21.5 15.8 4.3.6 7.7-1 36.9-10.7l10 30.1c3.7 10.8 15.8 18.6 29.4 14.7 12.2-3.9 18.6-17.2 14.7-29.4l-10-30.1 59.8-20.1 10 30.1c3.7 10.8 15.8 18.6 29.4 14.7 12.2-3.9 18.6-17.2 14.7-29.4l-10-30.1 29-9.7c12.2-4.2 18.6-17.5 14.7-29.6z"
+          ></path>
+        </symbol>
+      </svg>
+      <div class="tarif container">
+        <h1 class="tarif__title main-heading">Мы предлагаем следующие тарифы</h1>
+        <p class="tarif__info">* описания тарифов носят рекомендательный характер, какой тариф подойдёт именно Вам лучше уточнить в службе технической поддержки.</p>
+        <ul class="tarif__list js-dayly">
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--green">Старт 5</h3>
+            <div class="card__price">
+              <span>14</span>
+              <span>₽ / сутки</span>
+            </div>
+            <p class="card__description">Экономный тариф для общения в мессенджерах и электронной почты.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 5 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--green">Старт 10</h3>
+            <div class="card__price">
+              <span>15</span>
+              <span>₽ / сутки</span>
+            </div>
+            <p class="card__description">Минимальный тариф для социальных сетей и просмотра видео.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 10 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title">Старт 30</h3>
+            <div class="card__price">
+              <span>17</span>
+              <span>₽ / сутки</span>
+            </div>
+            <p class="card__description">Комфортный тариф для 1 пользователя. Можно смотреть видео в HD качестве и комфортно сёрфить по веб-страницам.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 30 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#youtube"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--yellow">Старт 50</h3>
+            <div class="card__price">
+              <span>20</span>
+              <span>₽ / сутки</span>
+            </div>
+            <p class="card__description">Скорости достаточно для большинства задач. Смотрите видео и играйте онлайн без проблем.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 50 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#youtube"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--red">Старт 100</h3>
+            <div class="card__price">
+              <span>25</span>
+              <span>₽ / сутки</span>
+            </div>
+            <p class="card__description">Максимально быстрый тариф. Отдыхайте, играйте или работайте в сети Интернет. 100 мбит/с хватает для любых задач.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 100 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#youtube"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#rocket"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="tarif__list js-monthly">
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--green">Оптимальный 5</h3>
+            <div class="card__price">
+              <span>400</span>
+              <span>₽ / месяц</span>
+            </div>
+            <p class="card__description">Экономный тариф для общения в мессенджерах и электронной почты.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 5 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--green">Оптимальный 10</h3>
+            <div class="card__price">
+              <span>450</span>
+              <span>₽ / месяц</span>
+            </div>
+            <p class="card__description">Минимальный тариф для социальных сетей и просмотра видео.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 10 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title">Оптимальный 30</h3>
+            <div class="card__price">
+              <span>500</span>
+              <span>₽ / месяц</span>
+            </div>
+            <p class="card__description">Комфортный тариф для 1 пользователя. Можно смотреть видео в HD качестве и комфортно сёрфить по веб-страницам.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 30 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#youtube"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--yellow">Оптимальный 50</h3>
+            <div class="card__price">
+              <span>550</span>
+              <span>₽ / месяц</span>
+            </div>
+            <p class="card__description">Скорости достаточно для большинства задач. Смотрите видео и играйте онлайн без проблем.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 50 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#youtube"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item card__details-item--disabled">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#na"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+          <li class="tarif__card card">
+            <h3 class="card__title card__title--red">Оптимальный 100</h3>
+            <div class="card__price">
+              <span>700</span>
+              <span>₽ / месяц</span>
+            </div>
+            <p class="card__description">Максимально быстрый тариф. Отдыхайте, играйте или работайте в сети Интернет. 100 мбит/с хватает для любых задач.</p>
+            <ul class="card__details">
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#tick"></use></svg
+                ><span>доступен в частном секторе</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#coins"></use></svg
+                ><span>посуточная тарификация</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#www"></use></svg
+                ><span>скорость до 100 мбит/с.</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#support"></use></svg
+                ><span>ежедневная техническая поддержка</span>
+              </li>
+              <li class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#youtube"></use></svg
+                ><span>видео высокого качества</span>
+              </li>
+              <li
+                class="card__details-item">
+                <svg aria-label="Иконка">
+                  <use xlink:href="#rocket"></use></svg
+                ><span>быстрое скачивание файлов</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
