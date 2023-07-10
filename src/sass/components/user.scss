@@ -1,6 +1,6 @@
 .user {
   max-width: 1024px;
-  padding-top: calc(var(--header-height) * 0.5);
+  margin: 0 auto;
 
   --fsize: clamp(1.5rem, 1vw + 1.25rem, 2rem);
   --marginBottom: calc(var(--fsize) / 4);
