@@ -17,15 +17,7 @@
 .user__pi {
   margin-bottom: calc(var(--marginBottom)*4);
 }
-.user__fio {
-  margin: 0 0 var(--marginBottom);
 
-  color: var(--font-color);
-
-  font-size: calc(var(--fsize) * 1.2);
-  font-weight: 700;
-  line-height: calc(var(--fsize) * 1.3);
-}
 .user_address,
 .user__phone {
   margin: 0 0 var(--marginBottom);

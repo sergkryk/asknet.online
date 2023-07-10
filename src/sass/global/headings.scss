@@ -2,9 +2,11 @@
   margin: 0;
   margin-bottom: calc(var(--size) * 0.6);
 
-  font-size: var(--size);
+  color: var(--font-color);
+
+  font-size: calc(var(--size) * 1.2);
   font-weight: 500;
-  line-height: calc(var(--size) * 1.25);
+  line-height: calc(var(--size) * 1.1);
 
   --size: clamp(1.625rem, 0.75vw + 1.4375rem, 2rem);
 }

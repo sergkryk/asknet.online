@@ -150,7 +150,7 @@ function userPage(user) {
   return `        <section class="user">
   <h1 class="user__title">Личный кабинет абонента</h1>
   <div class="user__pi">
-    <p class="user__fio">${pi?.fio}</p>
+    <p class="user__fio main-heading">${pi?.fio}</p>
     <p class="user_address">
       ${formatAddress(pi)}
     </p>
