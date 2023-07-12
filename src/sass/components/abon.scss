@@ -1,0 +1,88 @@
+.abon {
+  max-width: 1024px;
+  margin: 0 auto;
+  --margin: calc(var(--fsize) / 2);
+
+  --fsize: clamp(1.5rem, 1vw + 1.25rem, 2rem);
+}
+
+.abon__obj {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.abon__list {
+  display: grid;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 20px;
+}
+
+.abon__item {
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: calc(var(--margin) * 1.2) calc(var(--margin) * 2);
+
+  box-shadow: 0 1px 10px 2px #f2f2f2;
+}
+
+.abon__download {
+  position: relative;
+
+  margin-bottom: var(--margin);
+  padding-bottom: var(--margin);
+
+  color: var(--font-color);
+
+  font-size: var(--fsize);
+  line-height: calc(var(--fsize) * 1.2);
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    content: "";
+
+    background-image: linear-gradient(
+      90deg,
+      rgba(76, 175, 80, 1) 25%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  &:hover {
+    transition: color var(--default-transition);
+
+    color: var(--color-blue);
+  }
+
+  @media(min-width: 850px) {
+    font-size: calc(var(--fsize) * 0.7);
+    line-height: var(--fsize);
+  }
+}
+
+.abon__icon {
+  width: 40px;
+  height: 40px;
+  margin-top: auto;
+  margin-left: auto;
+
+  color: var(--site-red);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

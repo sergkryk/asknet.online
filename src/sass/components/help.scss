@@ -52,3 +52,27 @@
   }
   }
 }
+
+.help__subtitle {
+  margin: 0 0 var(--gap);
+
+  color: var(--font-color);
+
+  font-size: calc(var(--fsize) * 1.5);
+  font-weight: 500;
+  line-height: calc(var(--fsize) * 1.6);
+}
+
+.help__playlist {
+  transition: color var(--default-transition);
+  text-decoration: underline;
+
+  color: var(--site-blue);
+
+  font-size: calc(var(--fsize) * 1.4);
+  font-style: italic;
+
+  &:hover {
+    color: var(--color-blue);
+  }
+}
