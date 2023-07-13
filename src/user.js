@@ -66,7 +66,6 @@ async function getUser(authObj) {
     body: JSON.stringify(authObj),
   });
   let responseJson = await response.json();
-  console.log(responseJson);
   return responseJson;
 }
 
@@ -78,7 +77,6 @@ function renderUserPage(res) {
 async function formSubmitHandler(evt) {
   evt.preventDefault();
   const res = await getUser(handleFormData(loginForm));
-  console.log(res);
   if (res?.length > 0) {
     renderUserPage(res);
   } else {
