@@ -1,6 +1,7 @@
 import template from "./template";
 const loginForm = document.querySelector("#formLogin");
 const API_URL = "http://localhost:3001";
+
 const loginRegExp = new RegExp(/^[1|2|3|4]\d{3}$/);
 const passwordRegExp = new RegExp(/^\d{6}$/);
 
@@ -37,9 +38,9 @@ function handleInvalidPassword(password) {
 }
 
 function handleFormData(form) {
-  const response = new FormData(form);
+  const fromData = new FormData(form);
   const data = {};
-  for (const [key, value] of response) {
+  for (const [key, value] of fromData) {
     data[key] = value;
   }
   if (!loginRegExp.test(String(data?.login))) {
@@ -56,7 +57,7 @@ function handleFormData(form) {
   return data;
 }
 
-async function getUser(authObj) {
+async function fetchUserJson(authObj) {
   let response = await fetch(`${API_URL}/auth`, {
     mode: "cors",
     headers: {
@@ -65,8 +66,11 @@ async function getUser(authObj) {
     method: "POST",
     body: JSON.stringify(authObj),
   });
-  let responseJson = await response.json();
-  return responseJson;
+  if (response?.status === 200) {
+    let responseJson = await response.json();
+    return responseJson;
+  }
+  return null;
 }
 
 function renderUserPage(res) {
@@ -75,12 +79,15 @@ function renderUserPage(res) {
 }
 
 async function formSubmitHandler(evt) {
-  evt.preventDefault();
-  const res = await getUser(handleFormData(loginForm));
-  if (res?.length > 0) {
-    renderUserPage(res);
-  } else {
-    alert("Лицевой счёт не найден или неверно введён пароль!")
+  try {
+    evt.preventDefault();
+    const challengerCredentials = handleFormData(loginForm);
+    if (evt.target.checkValidity()) {
+      const res = await fetchUserJson(challengerCredentials);
+      res?.length > 0 ? renderUserPage(res) : alert("Лицевой счёт не найден или неверно введён пароль!")
+    }
+  } catch (error) {
+    alert("Произошла ошибка во время запроса. Попробуйте повторить запрос позже.")
   }
 }
 
