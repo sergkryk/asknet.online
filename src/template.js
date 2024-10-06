@@ -8,79 +8,51 @@ function formatBillNumber(string) {
 }
 
 function formatPhoneNumber(num) {
-  const countryCodes = {
-    72: "959",
-    71: "949",
-  };
   const str = String(num);
   const cleaned = str.replace(/\D/g, "");
-  const match = cleaned.match(/^(\d[7(2|1)])(\d{3})(\d{2})(\d{2})$/);
+  const match = cleaned.match(/^(7)(9[5,4]9)(\d{3})(\d{2})(\d{2})$/);
   if (match) {
-    return `+7 (${countryCodes[match[1]]}) ${match[2]}-${match[3]}-${match[4]}`;
+    return `+${match[1]}(${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
   }
   return "нет номера телефона";
 }
 
-function formatCity(city) {
-  const cities = {
-    Чернухино: "пгт.&nbsp;Чернухино",
-    Фащевка: "пгт.&nbsp;Фащевка",
-    Городище: "п.&nbsp;Городище",
-    Малоивановка: "с.&nbsp;Малоивановка",
-  };
-
-  return cities[city];
-}
-
-function formatStreet(street) {
-  if (street.match(/(переулок)/)) {
-    return `переулок&nbsp;${street.split(" ")[0]}`;
-  }
-  if (street.match(/(Молодёжный)/)) {
-    return `квартал&nbsp;${street.split(" ")[0]}`;
-  }
-  return `улица&nbsp;${street}`;
-}
-
-function formatBuild(address) {
-  if (address?.address_build && address?.address_flat) {
-    return `дом&nbsp;${address?.address_build}, кв.&nbsp;${address?.address_flat}`;
-  } else {
-    return `дом&nbsp;${address?.address_build}`;
-  }
-}
-
 function formatAddress(address) {
-  return `${formatCity(address?.city)}, ${formatStreet(
-    address?.address_street
-  )}, ${formatBuild(address)}`;
+  const parts = address.split(",");
+  const [
+    country,
+    region,
+    district,
+    city,
+    settlement,
+    street,
+    house,
+    flat,
+    entrance,
+    floor,
+    index,
+  ] = parts;
+  return flat
+    ? `${index}, ${country}, ${region}, ${district}, ${
+        city ? city : settlement
+      }, ${street}, ${house}, ${flat}`
+    : `${index}, ${country}, ${region}, ${district}, ${
+        city ? city : settlement
+      }, ${street}, ${house}`;
 }
 
 function formatDeposit(sum) {
   return new Intl.NumberFormat("ru-RU", currencyOpt).format(Number(sum));
 }
 
-function formatStatus(user, userDeposit) {
-  if (Number(user?.disable) === 1) {
-    return "отключен";
-  }
-  if (
-    Number(userDeposit) > 0 ||
-    Number(user?.credit) + Number(userDeposit) > 0
-  ) {
-    return "активен";
-  }
-  return "нет оплаты";
-}
-
 function formatFee(tarif) {
-  if (tarif?.month_fee) {
+  if (tarif.rentperiod == 1) {
     return `${new Intl.NumberFormat("ru-RU", currencyOpt).format(
-      Number(tarif.month_fee)
+      Number(tarif.above)
     )} / месяц`;
   } else {
     return `${new Intl.NumberFormat("ru-RU", currencyOpt).format(
-      Number(tarif.day_fee)
+      Number(tarif.above)
     )} / сутки`;
   }
 }
@@ -96,7 +68,7 @@ function formatDateToLocale(date) {
 
 function calcNextFeeDate(tarif) {
   let d = new Date();
-  if (tarif?.month_fee) {
+  if (tarif.rentperiod == 1) {
     d.setMonth(d.getMonth() + 1, 1);
   } else {
     d.setDate(d.getDate() + 1);
@@ -129,11 +101,11 @@ function renderExpDate(deposit, tarif) {
   if (Number(deposit) <= 0) {
     return "";
   }
-  if (tarif?.month_fee) {
-    return renderUserListItem('Активен до', calcExpMonth(deposit, tarif?.month_fee));
+  if (tarif.rentperiod == 1) {
+    return renderUserListItem("Активен до", calcExpMonth(deposit, tarif.above));
   }
-  if (tarif?.day_fee) {
-    return renderUserListItem('Активен до', calcExpDay(deposit, tarif?.day_fee));
+  if (tarif.rentperiod == 2) {
+    return renderUserListItem("Активен до", calcExpDay(deposit, tarif.above));
   }
 }
 
@@ -141,48 +113,48 @@ function renderNextFee(deposit, tarif) {
   if (Number(deposit) <= 0) {
     return "";
   } else {
-    return renderUserListItem("Следующее списание", calcNextFeeDate(tarif))
+    return renderUserListItem("Следующее списание", calcNextFeeDate(tarif));
   }
 }
 
 function userPage(user) {
-  const [general, pi, bill, tarif] = user;
+  const { name, address, phone, login, pass, deposit, blocked, tarif } = user;
   return `        <section class="user">
   <h1 class="user__title">Личный кабинет абонента</h1>
   <div class="user__pi">
-    <p class="user__fio main-heading">${pi?.fio}</p>
+    <p class="user__fio main-heading">${name}</p>
     <p class="user_address">
-      ${formatAddress(pi)}
+      ${formatAddress(address)}
     </p>
-    <p class="user__phone">${formatPhoneNumber(pi.phone)}</p>
+    <p class="user__phone">${formatPhoneNumber(phone)}</p>
   </div>
   <ul class="user__list">
     <li class="user__item">
       <span>Номер лицевого счёта</span>
-      <span>${formatBillNumber(general.id)}</span>
+      <span>${formatBillNumber(login)}</span>
     </li>
     <li class="user__item">
       <span>Баланс</span>
-      <span>${formatDeposit(bill.deposit)}</span>
+      <span>${formatDeposit(deposit)}</span>
     </li>
     <li class="user__item user__item--tarif">
       <span>Статус</span>
-      <span>${formatStatus(general, bill?.deposit)}</span>
+      <span>${blocked == 0 ? "Активен" : "Отключен"}</span>
     </li>
-    ${renderExpDate(bill?.deposit, tarif)}
+    ${renderExpDate(deposit, tarif)}
   </ul>
   <div class="user__tarif">
     <p class="user__tarif-heading">Тарифный план</p>
     <ul class="user__list">
       <li class="user__item user__item--tarif">
         <span>Название</span>
-        <span>${tarif.name}</span>
+        <span>${tarif.tarname}</span>
       </li>
       <li class="user__item user__item--tarif">
-        <span>Стоимость</span>
+        <span>Абонплата</span>
         <span>${formatFee(tarif)}</span>
       </li>
-      ${renderNextFee(bill?.deposit, tarif)}
+      ${renderNextFee(deposit, tarif)}
     </ul>
   </div>
 </section>`;

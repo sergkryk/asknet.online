@@ -1,6 +1,7 @@
 import template from "./template";
 const loginForm = document.querySelector("#formLogin");
-const API_URL = "http://localhost:3001";
+const API_URL = "http://127.0.0.1:3002";
+// const API_URL = "https://chernuhino.online:443";
 
 const loginRegExp = new RegExp(/^[1|2|3|4]\d{3}$/);
 const passwordRegExp = new RegExp(/^\d{6}$/);
@@ -58,7 +59,7 @@ function handleFormData(form) {
 }
 
 async function fetchUserJson(authObj) {
-  let response = await fetch(`${API_URL}/auth`, {
+  let response = await fetch(`${API_URL}/client`, {
     mode: "cors",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -84,9 +85,10 @@ async function formSubmitHandler(evt) {
     const challengerCredentials = handleFormData(loginForm);
     if (evt.target.checkValidity()) {
       const res = await fetchUserJson(challengerCredentials);
-      res?.length > 0 ? renderUserPage(res) : alert("Лицевой счёт не найден или неверно введён пароль!")
+      typeof res === "object" && "name" in res ? renderUserPage(res) : alert("Лицевой счёт не найден или неверно введён пароль!")
     }
   } catch (error) {
+    console.log(error);
     alert("Произошла ошибка во время запроса. Попробуйте повторить запрос позже.")
   }
 }
