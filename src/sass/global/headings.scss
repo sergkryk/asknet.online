@@ -11,6 +11,19 @@
   --size: clamp(1.625rem, 0.75vw + 1.4375rem, 2rem);
 }
 
+.main-heading-2 {
+  margin: 0;
+  margin-bottom: var(--size);
+
+  color: var(--font-color);
+
+  font-size: calc(var(--size) * 1.2);
+  font-weight: 500;
+  line-height: calc(var(--size) * 1.1);
+
+  --size: clamp(1.3rem, 0.6vw + 1.15rem, 1.6rem);
+}
+
 .modal-heading {
   text-align: center;
 

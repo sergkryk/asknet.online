@@ -6,7 +6,7 @@ const mode = process.env.NODE_ENV;
 // multiple html pages
 let htmlPages = ["index", "about", "user", "news", "tariffs", "help", "pay", "abon"];
 // news pages
-let newsPages = ["iptv"];
+let newsPages = ["tariffs-2025"];
 
 module.exports = {
   mode: mode,
