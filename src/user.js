@@ -1,7 +1,7 @@
 import template from "./template";
 const loginForm = document.querySelector("#formLogin");
-const API_URL = "http://127.0.0.1:3002";
-// const API_URL = "https://chernuhino.online:443";
+// const API_URL = "http://127.0.0.1:3002";
+const API_URL = "https://chernuhino.online:443";
 
 const loginRegExp = new RegExp(/^[1|2|3|4]\d{3}$/);
 const passwordRegExp = new RegExp(/^\d{6}$/);
